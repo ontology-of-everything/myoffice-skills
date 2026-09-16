@@ -1,0 +1,16 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Presentations",
+      "description": "Explicit-invocation HTML decks in pluggable visual styles.",
+      "skills": ["html-slides", "html-slides-cn"]
+    },
+    {
+      "title": "Repository guidance",
+      "description": "Evidence-based creation and pruning of CLAUDE.md instructions.",
+      "skills": ["claude-md", "claude-md-cn"]
+    }
+  ]
+}

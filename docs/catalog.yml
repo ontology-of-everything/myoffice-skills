@@ -1,0 +1,86 @@
+# Machine-readable skill index. Keep in sync with skills/ and qa/.
+version: 1
+skills:
+- id: claude-md
+  path: skills/en/claude-md
+  qa: qa/en/claude-md
+  display_name: CLAUDE.md
+  display_name_zh: CLAUDE.md 生成与精简
+  domain: meta
+  subdomains: &claude_md_subdomains
+  - agent-instructions
+  - repository-guidance
+  summary: Explicit-invocation-only generation and pruning of CLAUDE.md from repository evidence.
+  summary_zh: 仅显式调用，按仓库事实生成或精简 CLAUDE.md，只保留能避免具体错误的规则。
+  version: 0.1.0
+  agents: &claude_md_agents
+  - cursor
+  - claude-code
+  - codex
+  - openclaw
+  compatibility: Requires repository file read/write access.
+  distribution: direct-skill
+  language: en
+  translation_of: claude-md-cn
+- id: claude-md-cn
+  path: skills/cn/claude-md-cn
+  qa: qa/cn/claude-md-cn
+  display_name: CLAUDE.md 生成与精简（中文）
+  display_name_zh: CLAUDE.md 生成与精简
+  domain: meta
+  subdomains: *claude_md_subdomains
+  summary: Chinese edition. 仅显式调用，按仓库事实生成或精简 CLAUDE.md，只保留能避免具体错误的规则。
+  summary_zh: 仅显式调用，按仓库事实生成或精简 CLAUDE.md，只保留能避免具体错误的规则。
+  version: 0.1.0
+  agents: *claude_md_agents
+  compatibility: Requires repository file read/write access.
+  distribution: direct-skill
+  language: zh-CN
+  translation_of: claude-md
+- id: html-slides
+  path: skills/en/html-slides
+  qa: qa/en/html-slides
+  display_name: HTML Slides — Styled Single-File Decks (Huawei / Apple / Generic)
+  display_name_zh: HTML 胶片 · 华为 / Apple / 通用风格单文件 HTML 演示
+  domain: content
+  subdomains: &html_slides_subdomains
+  - presentation
+  - slides
+  - huawei-style
+  - html-deck
+  summary: Explicit-invocation-only deck builder that confirms the brief, outline, and per-page plan before producing a portable single-file 1920×1080 HTML presentation in a pluggable style, with optional PPTX export.
+  summary_zh: 仅显式调用的胶片生成器；先确认场景、大纲和逐页计划，再生成可移植的单文件 1920×1080 HTML 演示，并可选导出 PPTX。
+  version: 0.1.1
+  agents: &html_slides_agents
+  - cursor
+  - claude-code
+  - codex
+  - openclaw
+  compatibility: Writing the deck needs file read/write access; optional tools/export_pptx.py needs Python 3, Playwright with Chromium, and python-pptx.
+  marketplaces: &html_slides_marketplaces
+  - skills-sh
+  - skillsmp
+  - clawhub
+  distribution: direct-skill
+  clawhub_license: MIT-0 on ClawHub; repository source remains Apache-2.0
+  notes: Huawei assets under assets/huawei are Huawei trademarks bundled for Huawei-style decks only.
+  language: en
+  translation_of: html-slides-cn
+- id: html-slides-cn
+  path: skills/cn/html-slides-cn
+  qa: qa/cn/html-slides-cn
+  display_name: HTML 胶片 · 华为 / Apple / 通用风格单文件 HTML 演示（中文）
+  display_name_zh: HTML 胶片 · 华为 / Apple / 通用风格单文件 HTML 演示
+  domain: content
+  subdomains: *html_slides_subdomains
+  summary: Chinese edition. 仅显式调用的胶片生成器；先确认场景、大纲和逐页计划，再生成可移植的单文件 1920×1080 HTML 演示，并可选导出 PPTX。
+  summary_zh: 仅显式调用的胶片生成器；先确认场景、大纲和逐页计划，再生成可移植的单文件 1920×1080 HTML 演示，并可选导出 PPTX。
+  version: 0.1.1
+  agents: *html_slides_agents
+  compatibility: Writing the deck needs file read/write access; optional tools/export_pptx.py needs Python 3, Playwright with Chromium, and python-pptx.
+  marketplaces: *html_slides_marketplaces
+  distribution: direct-skill
+  clawhub_license: MIT-0 on ClawHub; repository source remains Apache-2.0
+  notes: Huawei assets under assets/huawei are Huawei trademarks bundled for Huawei-style decks only.
+  language: zh-CN
+  translation_of: html-slides
