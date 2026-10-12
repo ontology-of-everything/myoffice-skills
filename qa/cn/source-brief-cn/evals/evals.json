@@ -1,0 +1,29 @@
+{
+  "skill_name": "source-brief-cn",
+  "evals": [
+    {
+      "id": "popularity-and-experience",
+      "prompt": "整理文章及评论：作者称每天喝茶让所有人工作效率翻倍，未列研究。评论甲说我试过感觉更专注，获赞900；评论乙说我没效果，获赞30。",
+      "expected_output": "区分观点、感受、经验与未证实因果；高赞不升级为共识。",
+      "files": []
+    },
+    {
+      "id": "abstract-only",
+      "prompt": "仅凭摘要整理：观察研究追踪100人，喝茶与自报专注度相关，p=0.04。无全文。",
+      "expected_output": "标明只读摘要、相关非因果、未提供效应大小和方法细节，不推测局限为原文内容。",
+      "files": []
+    },
+    {
+      "id": "proceed-without-reasking-scope",
+      "prompt": "对上述材料直接做简短笔记，不联网。",
+      "expected_output": "直接按已定范围推进，标明未独立核验，不重复询问。",
+      "files": []
+    },
+    {
+      "id": "single-clarification-missing-source",
+      "prompt": "帮我整理那篇论文。当前没有文件、链接、标题或正文。",
+      "expected_output": "只问一次获取可识别材料的问题，不编写论文摘要。",
+      "files": []
+    }
+  ]
+}

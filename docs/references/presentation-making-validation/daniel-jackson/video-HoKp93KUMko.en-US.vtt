@@ -1,0 +1,2703 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.100 --> 00:00:02.610
+Hi, so my name is
+Daniel Jackson.
+
+00:00:02.610 --> 00:00:06.120
+I'm a Professor in EECS
+and a researcher in CSAIL.
+
+00:00:06.120 --> 00:00:09.460
+And I'm going to talk about
+how to design software.
+
+00:00:09.460 --> 00:00:11.820
+So here are the two questions
+I'm going to start with.
+
+00:00:11.820 --> 00:00:14.040
+First of all, what does
+innovation in software
+
+00:00:14.040 --> 00:00:14.640
+look like?
+
+00:00:14.640 --> 00:00:18.910
+And secondly, what makes a
+software product successful?
+
+00:00:18.910 --> 00:00:21.540
+So let's look at some
+scenarios of success,
+
+00:00:21.540 --> 00:00:24.510
+and I use this word
+scenarios advisedly.
+
+00:00:24.510 --> 00:00:27.420
+So let's start with an example
+of a great success, Tim
+
+00:00:27.420 --> 00:00:30.100
+Berners-Lee's World Wide Web.
+
+00:00:30.100 --> 00:00:33.250
+So what was novel about the web?
+
+00:00:33.250 --> 00:00:35.460
+So let me tell you
+what wasn't novel.
+
+00:00:35.460 --> 00:00:37.770
+First of all, the technology
+certainly wasn't novel.
+
+00:00:37.770 --> 00:00:41.850
+If you look at the technology
+that Tim developed,
+
+00:00:41.850 --> 00:00:43.530
+his first prototype
+of the web on,
+
+00:00:43.530 --> 00:00:45.690
+it was pretty advanced
+stuff even for back then.
+
+00:00:45.690 --> 00:00:47.730
+He had almost a gigabyte
+on his hard disk.
+
+00:00:47.730 --> 00:00:49.590
+He had this fancy
+[INAUDIBLE] computer.
+
+00:00:49.590 --> 00:00:50.440
+You're blocking the screen.
+
+00:00:50.440 --> 00:00:51.607
+Oh, I'm blocking the screen.
+
+00:00:51.607 --> 00:00:53.050
+Thank you.
+
+00:00:53.050 --> 00:00:54.100
+Where shall I stand then?
+
+00:00:54.100 --> 00:00:54.850
+How about over here?
+
+00:00:54.850 --> 00:00:55.375
+Is that better?
+
+00:00:55.375 --> 00:00:55.875
+[INAUDIBLE]
+
+00:00:55.875 --> 00:00:57.670
+Great.
+
+00:00:57.670 --> 00:01:00.910
+So it had a built in
+ethernet connectivity,
+
+00:01:00.910 --> 00:01:03.710
+so all the crucial elements
+of functionality were there.
+
+00:01:03.710 --> 00:01:07.960
+So technology was certainly
+not an innovation.
+
+00:01:07.960 --> 00:01:10.300
+What about the
+fundamental ideas?
+
+00:01:10.300 --> 00:01:12.430
+Well, the idea of
+hyperlinks, well, that
+
+00:01:12.430 --> 00:01:15.760
+had been there in hypercard
+in Bill Atkinson's product
+
+00:01:15.760 --> 00:01:17.080
+in 1987.
+
+00:01:17.080 --> 00:01:20.973
+In fact, hypertext itself
+had gone back many years
+
+00:01:20.973 --> 00:01:22.390
+before that was
+invented, probably
+
+00:01:22.390 --> 00:01:27.280
+in 1967 in an editing system
+that Ted Nelson and Andries van
+
+00:01:27.280 --> 00:01:29.050
+Dam built.
+
+00:01:29.050 --> 00:01:31.720
+Arguably, the whole notion
+of a hyperlink collection
+
+00:01:31.720 --> 00:01:34.990
+of documents goes back
+to Vannevar Bush's paper
+
+00:01:34.990 --> 00:01:38.980
+in The Atlantic in 1945 where
+he describes this fantastic
+
+00:01:38.980 --> 00:01:43.630
+machine called the Memex, which
+was a kind of mass of knowledge
+
+00:01:43.630 --> 00:01:45.880
+that you could
+navigate by taking
+
+00:01:45.880 --> 00:01:49.070
+an elaborate path through
+this labyrinth, and so on.
+
+00:01:49.070 --> 00:01:51.200
+So these ideas weren't new.
+
+00:01:51.200 --> 00:01:53.870
+The idea of markup wasn't new.
+
+00:01:53.870 --> 00:01:56.750
+HTML was a new markup
+language, but it
+
+00:01:56.750 --> 00:01:58.520
+was based on SGML,
+which had already
+
+00:01:58.520 --> 00:02:01.070
+existed for several years.
+
+00:02:01.070 --> 00:02:04.362
+And finally, the idea of moving
+files across the network,
+
+00:02:04.362 --> 00:02:05.570
+well, that wasn't new either.
+
+00:02:05.570 --> 00:02:08.330
+The file transfer protocol
+was very well established.
+
+00:02:08.330 --> 00:02:10.400
+And, at the time of
+the World Wide Web,
+
+00:02:10.400 --> 00:02:13.610
+people were already downloading
+papers from each other's sites,
+
+00:02:13.610 --> 00:02:14.490
+and so on.
+
+00:02:14.490 --> 00:02:15.750
+So what was new?
+
+00:02:15.750 --> 00:02:18.590
+So I'm going to argue that
+something incredibly simple
+
+00:02:18.590 --> 00:02:22.130
+was new, and it was in
+the scenario by which
+
+00:02:22.130 --> 00:02:23.900
+this downloading happened.
+
+00:02:23.900 --> 00:02:26.420
+So when you used an
+FTP server, here's
+
+00:02:26.420 --> 00:02:27.740
+basically what you had to do.
+
+00:02:27.740 --> 00:02:30.320
+You had to identify
+your server as.
+
+00:02:30.320 --> 00:02:32.240
+You had to open a
+connection to it.
+
+00:02:32.240 --> 00:02:36.080
+You had to set a directory,
+find the right directory
+
+00:02:36.080 --> 00:02:37.310
+inside that server.
+
+00:02:37.310 --> 00:02:40.190
+And then you could request
+the particular file,
+
+00:02:40.190 --> 00:02:41.600
+any number of files you wanted.
+
+00:02:41.600 --> 00:02:43.892
+And then you could close your
+connection to the server.
+
+00:02:43.892 --> 00:02:45.770
+And the way I'm
+describing this scenario,
+
+00:02:45.770 --> 00:02:48.560
+these red bits are all
+the annoying bits, right,
+
+00:02:48.560 --> 00:02:50.630
+because you just
+wanted those files.
+
+00:02:50.630 --> 00:02:53.148
+So why did you have to do
+all these preliminary things
+
+00:02:53.148 --> 00:02:55.190
+of going to the server
+and opening the connection
+
+00:02:55.190 --> 00:02:57.060
+and closing the
+connection, and so on?
+
+00:02:57.060 --> 00:02:59.270
+So Tim's solution
+was, well, why not
+
+00:02:59.270 --> 00:03:01.460
+simply have a single
+request that says,
+
+00:03:01.460 --> 00:03:04.850
+get file F1 at server S?
+
+00:03:04.850 --> 00:03:06.560
+And of course, this
+idea in retrospect,
+
+00:03:06.560 --> 00:03:09.770
+like a lot of great ideas,
+is completely obvious.
+
+00:03:09.770 --> 00:03:12.875
+And of course, that thing
+there, that address,
+
+00:03:12.875 --> 00:03:15.440
+S/F1 is just a URL.
+
+00:03:15.440 --> 00:03:20.030
+And so what this means is that
+the real innovation of the web
+
+00:03:20.030 --> 00:03:21.770
+was, in fact, the URL.
+
+00:03:21.770 --> 00:03:25.820
+It was the idea of having
+persistent names for resources
+
+00:03:25.820 --> 00:03:30.380
+and being able to request the
+resource with a particular name
+
+00:03:30.380 --> 00:03:31.670
+in one step.
+
+00:03:31.670 --> 00:03:34.970
+OK, second scenario, the iPod.
+
+00:03:34.970 --> 00:03:36.920
+What was novel about the iPod?
+
+00:03:36.920 --> 00:03:39.560
+Well, of course, it was
+a super slick device.
+
+00:03:39.560 --> 00:03:42.350
+But its design was
+not its novelty.
+
+00:03:42.350 --> 00:03:44.210
+I'm sure many of you
+have seen this before.
+
+00:03:44.210 --> 00:03:46.400
+It's been pointed out
+many times famously,
+
+00:03:46.400 --> 00:03:49.010
+that Jony Ive's beautiful
+design of the iPod
+
+00:03:49.010 --> 00:03:53.110
+was based on Dieter Rams' design
+of a pocket transistor radio
+
+00:03:53.110 --> 00:03:56.900
+many years before, which
+looks almost identical.
+
+00:03:56.900 --> 00:04:00.020
+It wasn't the technology either.
+
+00:04:00.020 --> 00:04:03.410
+Steve Jobs talked about
+riding the wave of technology,
+
+00:04:03.410 --> 00:04:08.300
+and he was certainly absolutely
+astute to technology advances.
+
+00:04:08.300 --> 00:04:10.517
+And in fact, there
+was this Toshiba drive
+
+00:04:10.517 --> 00:04:12.350
+that came out just
+before the iPod came out,
+
+00:04:12.350 --> 00:04:14.030
+and he wanted to use that drive.
+
+00:04:14.030 --> 00:04:16.670
+And he also wanted to have
+a really fast connector
+
+00:04:16.670 --> 00:04:20.060
+so that you could upload your
+stuff to your iPod really fast.
+
+00:04:20.060 --> 00:04:23.480
+But in fact, these were
+just incremental advances.
+
+00:04:23.480 --> 00:04:26.270
+And way before the
+iPod, there was a device
+
+00:04:26.270 --> 00:04:28.850
+built by Digital called
+the Personal Jukebox, which
+
+00:04:28.850 --> 00:04:29.720
+was not much bigger.
+
+00:04:29.720 --> 00:04:31.580
+And it had a five
+gigabyte drive.
+
+00:04:31.580 --> 00:04:34.550
+And so technology was
+not what was responsible.
+
+00:04:34.550 --> 00:04:36.680
+So what was responsible?
+
+00:04:36.680 --> 00:04:39.470
+Again, a fundamental
+change in the scenario.
+
+00:04:39.470 --> 00:04:44.030
+So the way that you used an
+mp3 player prior to the iPod
+
+00:04:44.030 --> 00:04:46.880
+was at first you'd have to
+do these nasty red things.
+
+00:04:46.880 --> 00:04:51.080
+You had to download a pirated
+track with Napster or whatever,
+
+00:04:51.080 --> 00:04:53.450
+or you had to rip your
+CD collection, which
+
+00:04:53.450 --> 00:04:55.310
+was a very tedious business.
+
+00:04:55.310 --> 00:04:57.330
+Then you had to upload
+it to your iPod.
+
+00:04:57.330 --> 00:04:59.410
+And then finally, you
+could play the thing.
+
+00:04:59.410 --> 00:05:02.040
+And what Steve Jobs
+realized was that there
+
+00:05:02.040 --> 00:05:05.610
+needed to be a simple,
+streamlined scenario
+
+00:05:05.610 --> 00:05:09.090
+in which you could buy a
+song and play the song.
+
+00:05:09.090 --> 00:05:10.800
+You could play it
+locally, and then you
+
+00:05:10.800 --> 00:05:12.750
+could synchronize the
+device on which you
+
+00:05:12.750 --> 00:05:15.870
+bought the song with your iPod
+and then play it on the iPod.
+
+00:05:15.870 --> 00:05:18.150
+And that means, of
+course, that iTunes
+
+00:05:18.150 --> 00:05:20.340
+was an important member
+of the supporting
+
+00:05:20.340 --> 00:05:22.020
+cast in this success.
+
+00:05:22.020 --> 00:05:25.620
+And iTunes came out shortly
+after the iPod itself.
+
+00:05:25.620 --> 00:05:29.520
+And in fact, if you look at
+the sales of the iPod, what
+
+00:05:29.520 --> 00:05:31.830
+you really see is that
+the sales of the iPod
+
+00:05:31.830 --> 00:05:34.980
+really take off big
+time after iTunes
+
+00:05:34.980 --> 00:05:36.630
+has sold 100 million songs.
+
+00:05:36.630 --> 00:05:38.637
+So iTunes becomes
+really well established,
+
+00:05:38.637 --> 00:05:40.470
+and it's really at that
+point that everybody
+
+00:05:40.470 --> 00:05:43.500
+decides that they need an iPod.
+
+00:05:43.500 --> 00:05:48.600
+Of course, the iPod disappears
+into the shrouds of the past
+
+00:05:48.600 --> 00:05:51.630
+because we have
+iPhones now, which
+
+00:05:51.630 --> 00:05:54.850
+are much more capable and
+powerful and capacious devices,
+
+00:05:54.850 --> 00:05:55.350
+and so on.
+
+00:05:55.350 --> 00:05:58.080
+I happen to think
+that it's sad that we
+
+00:05:58.080 --> 00:06:00.010
+don't have this lovely
+little device anymore.
+
+00:06:00.010 --> 00:06:02.430
+I thought the shuffle
+was super cute.
+
+00:06:02.430 --> 00:06:05.460
+And no one, as far as I know,
+is making a phone this size.
+
+00:06:05.460 --> 00:06:07.320
+Phones just seem to
+be getting bigger.
+
+00:06:07.320 --> 00:06:09.420
+Story number three, WhatsApp.
+
+00:06:09.420 --> 00:06:11.370
+So what was novel
+about WhatsApp?
+
+00:06:11.370 --> 00:06:13.418
+You can get the
+pattern here, right?
+
+00:06:13.418 --> 00:06:15.210
+Well, it wasn't what
+a lot of people think.
+
+00:06:15.210 --> 00:06:17.850
+It wasn't free texting, right,
+because there were companies
+
+00:06:17.850 --> 00:06:20.580
+that have produced free
+texting and free phone
+
+00:06:20.580 --> 00:06:22.060
+calls before that.
+
+00:06:22.060 --> 00:06:25.290
+And if you look at the
+growth of WhatsApp,
+
+00:06:25.290 --> 00:06:28.110
+you see that there was
+a single big moment.
+
+00:06:28.110 --> 00:06:31.200
+And that big moment
+was about there in 2011
+
+00:06:31.200 --> 00:06:32.640
+when things really took off.
+
+00:06:32.640 --> 00:06:35.610
+And what happened at that
+point was that WhatsApp
+
+00:06:35.610 --> 00:06:37.620
+introduced group chat.
+
+00:06:37.620 --> 00:06:39.690
+So what was so
+significant about--
+
+00:06:39.690 --> 00:06:42.960
+and if you look
+at the derivative,
+
+00:06:42.960 --> 00:06:47.400
+you can see much more
+clearly how the group chat
+
+00:06:47.400 --> 00:06:50.130
+feature corresponded to that
+crucial point of explosion
+
+00:06:50.130 --> 00:06:50.850
+of WhatsApp.
+
+00:06:50.850 --> 00:06:54.480
+A lot of people, by the way,
+who only knew WhatsApp later,
+
+00:06:54.480 --> 00:06:56.490
+think end-to-end
+encryption was a big deal
+
+00:06:56.490 --> 00:06:59.780
+because that came to be known
+as a key feature of WhatsApp.
+
+00:06:59.780 --> 00:07:01.530
+But, as you can see,
+end-to-end encryption
+
+00:07:01.530 --> 00:07:04.020
+comes in much later when
+the growth of WhatsApp
+
+00:07:04.020 --> 00:07:05.820
+has really stabilized.
+
+00:07:05.820 --> 00:07:08.910
+And it turns out that groups
+were a really hot thing
+
+00:07:08.910 --> 00:07:10.290
+back in 2011.
+
+00:07:10.290 --> 00:07:13.440
+Here's an example of an article
+from The New York Times saying,
+
+00:07:13.440 --> 00:07:14.670
+everybody's doing groups.
+
+00:07:14.670 --> 00:07:16.050
+It's the coolest thing on Earth.
+
+00:07:16.050 --> 00:07:17.820
+So what was so
+cool about groups?
+
+00:07:17.820 --> 00:07:20.680
+It seems so obvious
+and natural to us now.
+
+00:07:20.680 --> 00:07:23.130
+Well, what was so
+cool was that, before,
+
+00:07:23.130 --> 00:07:25.950
+the notion of
+groups, if you wanted
+
+00:07:25.950 --> 00:07:28.380
+to engage a number of
+people in a conversation,
+
+00:07:28.380 --> 00:07:30.510
+then on every single
+message you had
+
+00:07:30.510 --> 00:07:32.340
+to add the recipients, right?
+
+00:07:32.340 --> 00:07:35.640
+And every time someone
+new was added to the call,
+
+00:07:35.640 --> 00:07:38.340
+you had to remember to
+include them as well.
+
+00:07:38.340 --> 00:07:42.480
+In the group scenario, instead,
+all that happens is they--
+
+00:07:42.480 --> 00:07:45.330
+and they're represented here,
+the other people by the yellow
+
+00:07:45.330 --> 00:07:46.050
+boxes--
+
+00:07:46.050 --> 00:07:49.890
+they simply spontaneously
+decide to join the conversation.
+
+00:07:49.890 --> 00:07:52.810
+And all subsequent
+messages are sent to them.
+
+00:07:52.810 --> 00:07:56.820
+And so what you're seeing
+again is a dramatic change
+
+00:07:56.820 --> 00:08:00.030
+in usability by switching
+from a scenario that
+
+00:08:00.030 --> 00:08:05.160
+has inconveniences in it
+to a much simpler scenario.
+
+00:08:05.160 --> 00:08:08.850
+And it's that scenario
+that's responsible
+
+00:08:08.850 --> 00:08:11.700
+for the great uptake
+of the technology.
+
+00:08:11.700 --> 00:08:14.190
+Story number four, Zoom.
+
+00:08:14.190 --> 00:08:15.540
+So this was fun, actually.
+
+00:08:15.540 --> 00:08:19.140
+So I looked online to
+see if I could find stats
+
+00:08:19.140 --> 00:08:21.210
+about the growth
+of Skype and Zoom.
+
+00:08:21.210 --> 00:08:25.560
+And I found this
+picture of Skype usage
+
+00:08:25.560 --> 00:08:27.550
+from a site called statistica.
+
+00:08:27.550 --> 00:08:29.550
+And I thought, wow, that
+looks a little strange.
+
+00:08:29.550 --> 00:08:33.870
+And then I realized there are
+asterisks from 2018 onwards.
+
+00:08:33.870 --> 00:08:38.039
+And it turns out that that was
+the projected growth of Skype.
+
+00:08:38.039 --> 00:08:38.970
+It's still online.
+
+00:08:38.970 --> 00:08:41.039
+You can still find this picture.
+
+00:08:41.039 --> 00:08:45.270
+As we all know, in fact, this
+was not Skype's happy story.
+
+00:08:45.270 --> 00:08:47.160
+That, in fact, what
+happened instead
+
+00:08:47.160 --> 00:08:51.300
+was this, that basically Skype
+and everybody else shouldered
+
+00:08:51.300 --> 00:08:52.560
+off and went nowhere.
+
+00:08:52.560 --> 00:08:54.600
+And Zoom completely exploded.
+
+00:08:54.600 --> 00:08:56.510
+That's Zoom in red.
+
+00:08:56.510 --> 00:08:59.330
+And that happened of course
+at the time of COVID.
+
+00:08:59.330 --> 00:09:01.760
+So what was so
+remarkable about Zoom?
+
+00:09:05.310 --> 00:09:12.690
+So here's, by the way, this was
+one of the first famous Zoom
+
+00:09:12.690 --> 00:09:13.813
+meetings.
+
+00:09:13.813 --> 00:09:15.480
+Boris Johnson the
+British prime minister
+
+00:09:15.480 --> 00:09:17.790
+was so proud that
+he was using Zoom
+
+00:09:17.790 --> 00:09:20.460
+that he screenshotted
+his Zoom call
+
+00:09:20.460 --> 00:09:24.810
+and tweeted it out there
+with the private Zoom
+
+00:09:24.810 --> 00:09:26.713
+ID of the call
+that, at the time,
+
+00:09:26.713 --> 00:09:28.380
+was available for
+everybody in the world
+
+00:09:28.380 --> 00:09:31.230
+to join his cabinet meetings.
+
+00:09:31.230 --> 00:09:33.280
+So this was really cool.
+
+00:09:33.280 --> 00:09:36.390
+But what was actually
+new about video calls?
+
+00:09:36.390 --> 00:09:43.110
+Well, just as David was saying,
+that they had video calls back
+
+00:09:43.110 --> 00:09:46.230
+on the internet 30 years
+before Zoom or whatever,
+
+00:09:46.230 --> 00:09:48.570
+actually turns out that
+even prior to the internet
+
+00:09:48.570 --> 00:09:52.080
+there was something called
+the Picture Phone in 1964.
+
+00:09:52.080 --> 00:09:55.470
+And of course, there
+was Skype in 2009.
+
+00:09:55.470 --> 00:09:59.340
+So video calls were
+not a novelty of Zoom.
+
+00:09:59.340 --> 00:10:00.840
+There were also webcams.
+
+00:10:00.840 --> 00:10:03.540
+You might think, well, how
+could this actually work
+
+00:10:03.540 --> 00:10:05.680
+if it wasn't
+convenient to actually
+
+00:10:05.680 --> 00:10:07.150
+have a webcam on your laptop?
+
+00:10:07.150 --> 00:10:11.230
+But webcams have been
+around since 1994,
+
+00:10:11.230 --> 00:10:13.630
+and they were already
+cheap devices.
+
+00:10:13.630 --> 00:10:15.560
+Furthermore, you
+might say, well,
+
+00:10:15.560 --> 00:10:18.280
+maybe it wasn't so convenient
+to ship video over the internet.
+
+00:10:18.280 --> 00:10:20.238
+Maybe there were a lot
+of performance problems.
+
+00:10:20.238 --> 00:10:26.560
+Well, the H264 video codec was
+invented or finalized in 2003.
+
+00:10:26.560 --> 00:10:29.890
+So again, the story was
+that these things just
+
+00:10:29.890 --> 00:10:33.550
+weren't convenient to use, that
+if you wanted to use Skype,
+
+00:10:33.550 --> 00:10:35.230
+this was typically
+what you had to do.
+
+00:10:35.230 --> 00:10:38.200
+First of all, you as the user
+who wanted to talk to someone
+
+00:10:38.200 --> 00:10:39.550
+had to sign up for the app.
+
+00:10:39.550 --> 00:10:40.810
+OK, not unreasonable.
+
+00:10:40.810 --> 00:10:43.120
+But then the person
+you were talking to--
+
+00:10:43.120 --> 00:10:45.550
+and they're the red box-- they
+had to sign up for the app
+
+00:10:45.550 --> 00:10:46.360
+as well.
+
+00:10:46.360 --> 00:10:48.550
+You then place the
+call, and then you
+
+00:10:48.550 --> 00:10:50.230
+had to add them to the call.
+
+00:10:50.230 --> 00:10:53.080
+And the problem there is that
+if you wanted to add just one
+
+00:10:53.080 --> 00:10:55.690
+person and they were
+already using Skype
+
+00:10:55.690 --> 00:10:58.490
+and you were talking to them
+a lot, that was just fine.
+
+00:10:58.490 --> 00:11:00.742
+But if you wanted
+to add 100 people,
+
+00:11:00.742 --> 00:11:02.950
+because you were running
+some kind of Zoom conference
+
+00:11:02.950 --> 00:11:05.770
+or whatever, this was
+completely infeasible.
+
+00:11:05.770 --> 00:11:07.770
+Then you could talk, and
+then you could hang up.
+
+00:11:07.770 --> 00:11:08.940
+That part was fine.
+
+00:11:08.940 --> 00:11:15.720
+Now, to be fair, Skype did
+have a group mechanism that
+
+00:11:15.720 --> 00:11:17.010
+allowed you to define a group.
+
+00:11:17.010 --> 00:11:18.780
+But even for the
+group, you still
+
+00:11:18.780 --> 00:11:21.900
+had to add everybody one
+at a time to the group
+
+00:11:21.900 --> 00:11:24.510
+before you could start the call.
+
+00:11:24.510 --> 00:11:26.670
+And of course, we
+know what Zoom did.
+
+00:11:26.670 --> 00:11:30.510
+Zoom did something in a way more
+complicated but that turns out
+
+00:11:30.510 --> 00:11:32.040
+to be much simpler,
+right, which is
+
+00:11:32.040 --> 00:11:36.180
+that asynchronously, when you
+create the meeting, what you do
+
+00:11:36.180 --> 00:11:38.520
+is you get a link from
+creating the meeting.
+
+00:11:38.520 --> 00:11:41.910
+And you can then send that link
+out of band by email or text
+
+00:11:41.910 --> 00:11:43.470
+or on the phone or
+whatever you want
+
+00:11:43.470 --> 00:11:45.000
+to do to all the participants.
+
+00:11:45.000 --> 00:11:48.660
+And then they can join
+in yellow asynchronously.
+
+00:11:48.660 --> 00:11:51.660
+So this idea I
+believe was really
+
+00:11:51.660 --> 00:11:53.850
+crucial to the success
+of Zoom, and this
+
+00:11:53.850 --> 00:11:57.330
+is why Zoom pushed
+Skype out of the way.
+
+00:11:57.330 --> 00:12:00.780
+And if you look at the entire
+history of video conferencing,
+
+00:12:00.780 --> 00:12:03.480
+and there have been so many
+different applications,
+
+00:12:03.480 --> 00:12:06.490
+one of the interesting things is
+that a company is not typically
+
+00:12:06.490 --> 00:12:08.050
+mentioned in this history.
+
+00:12:08.050 --> 00:12:11.140
+And that's the
+company LogMeIn, which
+
+00:12:11.140 --> 00:12:13.150
+had a product called join.me.
+
+00:12:13.150 --> 00:12:15.340
+And they had in their
+product, because they
+
+00:12:15.340 --> 00:12:17.740
+were trying to do an
+innovator's dilemma,
+
+00:12:17.740 --> 00:12:19.810
+sort of compete with
+the big players.
+
+00:12:19.810 --> 00:12:22.840
+They wanted to produce really
+lightweight video conferencing.
+
+00:12:22.840 --> 00:12:25.060
+And they had this idea
+of a meeting link.
+
+00:12:25.060 --> 00:12:28.210
+And it's that idea of the
+meeting link and the scenario
+
+00:12:28.210 --> 00:12:31.990
+that I showed you that
+gets adopted by Zoom.
+
+00:12:31.990 --> 00:12:36.400
+In fact, Skype, realizing
+how badly they needed it,
+
+00:12:36.400 --> 00:12:38.890
+when they saw Zoom
+using this concept,
+
+00:12:38.890 --> 00:12:40.270
+they did it themselves.
+
+00:12:40.270 --> 00:12:43.180
+But they did it in April
+2020 when they'd already
+
+00:12:43.180 --> 00:12:45.750
+lost momentum to Zoom.
+
+00:12:45.750 --> 00:12:48.250
+And because it wasn't the
+central way of actually making
+
+00:12:48.250 --> 00:12:49.990
+a Skype call, I
+think it was called
+
+00:12:49.990 --> 00:12:53.590
+Meet Now or something,
+people barely even noticed
+
+00:12:53.590 --> 00:12:55.973
+that Skype had added
+this crucial feature.
+
+00:12:55.973 --> 00:12:58.390
+And then, by the way, this
+goes to all the other products.
+
+00:12:58.390 --> 00:13:01.390
+And Microsoft Teams, a
+couple of years later,
+
+00:13:01.390 --> 00:13:04.330
+realizes that it needs
+this scenario too.
+
+00:13:04.330 --> 00:13:07.810
+OK, as if I haven't driven
+the point home enough,
+
+00:13:07.810 --> 00:13:10.780
+one more example, Calendly.
+
+00:13:10.780 --> 00:13:14.560
+So Calendly is being
+called the four billion
+
+00:13:14.560 --> 00:13:17.350
+DocuSign of scheduling,
+a phenomenally successful
+
+00:13:17.350 --> 00:13:18.140
+company.
+
+00:13:18.140 --> 00:13:19.720
+So how did it do it?
+
+00:13:19.720 --> 00:13:21.970
+Well, the critical
+idea of Calendly
+
+00:13:21.970 --> 00:13:24.070
+was that you could
+schedule yourself
+
+00:13:24.070 --> 00:13:25.780
+for a meeting with
+somebody else.
+
+00:13:25.780 --> 00:13:29.320
+So what that means is that,
+rather than the normal kind
+
+00:13:29.320 --> 00:13:31.900
+of elaborate and
+painful scenario
+
+00:13:31.900 --> 00:13:36.340
+in which basically the person
+you're trying to schedule with
+
+00:13:36.340 --> 00:13:37.625
+records their availability.
+
+00:13:37.625 --> 00:13:40.000
+And you go to them, and you
+request some slots, you know,
+
+00:13:40.000 --> 00:13:41.708
+what you used to have
+to do if you wanted
+
+00:13:41.708 --> 00:13:43.150
+to go and get a haircut, right?
+
+00:13:43.150 --> 00:13:45.882
+And then they say, well, I
+have 5 o'clock on Wednesday.
+
+00:13:45.882 --> 00:13:46.840
+Will that work for you?
+
+00:13:46.840 --> 00:13:47.680
+No, that won't work.
+
+00:13:47.680 --> 00:13:49.360
+Well, how about 10
+o'clock on Thursday.
+
+00:13:49.360 --> 00:13:50.470
+Eventually, you find a slot.
+
+00:13:50.470 --> 00:13:51.250
+You select the slot.
+
+00:13:51.250 --> 00:13:51.880
+You confirm it.
+
+00:13:51.880 --> 00:13:53.200
+All this painful stuff.
+
+00:13:53.200 --> 00:13:57.730
+Instead, what Calendly realized
+was that you could simply
+
+00:13:57.730 --> 00:14:00.340
+have the person providing
+the slots record
+
+00:14:00.340 --> 00:14:01.660
+their availability.
+
+00:14:01.660 --> 00:14:04.000
+And then the users,
+the people who
+
+00:14:04.000 --> 00:14:07.220
+are going to actually use those
+slots, would just select a slot
+
+00:14:07.220 --> 00:14:10.620
+and would automatically
+get a confirmation for it.
+
+00:14:10.620 --> 00:14:13.280
+So this idea of
+self-scheduling, like a lot
+
+00:14:13.280 --> 00:14:14.960
+of great ideas, and
+just the same way
+
+00:14:14.960 --> 00:14:17.450
+that Zoom's key idea was
+not invented by Zoom,
+
+00:14:17.450 --> 00:14:20.570
+this key idea was not
+invented by Calendly.
+
+00:14:20.570 --> 00:14:22.070
+I'm not sure who
+it was invented by.
+
+00:14:22.070 --> 00:14:26.120
+But I think it was invented
+by a company called Acuity.
+
+00:14:26.120 --> 00:14:29.870
+And Acuity had actually built
+a self-scheduling system
+
+00:14:29.870 --> 00:14:32.060
+that, unlike
+Calendly, was focused
+
+00:14:32.060 --> 00:14:34.250
+on small businesses,
+which is perhaps why they
+
+00:14:34.250 --> 00:14:36.560
+didn't grow in the same way.
+
+00:14:36.560 --> 00:14:39.800
+And they came up with this
+self-scheduling scenario.
+
+00:14:39.800 --> 00:14:42.770
+And Calendly then
+basically simplifies it
+
+00:14:42.770 --> 00:14:46.670
+and grows it to the
+single proprietor market.
+
+00:14:46.670 --> 00:14:50.150
+And of course, that idea
+then becomes universal.
+
+00:14:50.150 --> 00:14:52.670
+Google Calendar had
+something called slots back
+
+00:14:52.670 --> 00:14:56.030
+in 2011, which was a much
+more cumbersome mechanism,
+
+00:14:56.030 --> 00:14:58.430
+a bit more like
+Skype with respect
+
+00:14:58.430 --> 00:15:01.820
+to Zoom, where you could
+share calendars with people.
+
+00:15:01.820 --> 00:15:03.280
+And you could enter--
+
+00:15:03.280 --> 00:15:05.040
+you could coordinate meetings.
+
+00:15:05.040 --> 00:15:06.930
+But it didn't have
+this nice feature
+
+00:15:06.930 --> 00:15:10.530
+that a nonuser of the
+calendar could sign up
+
+00:15:10.530 --> 00:15:11.700
+on someone else's calendar.
+
+00:15:11.700 --> 00:15:13.825
+And they added that with
+something called schedules
+
+00:15:13.825 --> 00:15:15.690
+in 2022, I believe.
+
+00:15:15.690 --> 00:15:20.640
+So the crucial idea here is
+that successful software design
+
+00:15:20.640 --> 00:15:26.430
+often involves identifying a key
+scenario that changes the way
+
+00:15:26.430 --> 00:15:29.550
+people use the system,
+that eliminates pain points
+
+00:15:29.550 --> 00:15:33.090
+and constraints, and makes
+the innovation just completely
+
+00:15:33.090 --> 00:15:33.990
+irresistible.
+
+00:15:33.990 --> 00:15:36.030
+And once you have
+this new scenario,
+
+00:15:36.030 --> 00:15:37.860
+you can't live without it.
+
+00:15:37.860 --> 00:15:42.000
+To use a term that Merrick first
+invented, it becomes a not not.
+
+00:15:42.000 --> 00:15:45.810
+It becomes not acceptable
+to not have it, right?
+
+00:15:45.810 --> 00:15:48.510
+Once you have group
+chat, you just
+
+00:15:48.510 --> 00:15:50.340
+will not want to send
+messages in which you
+
+00:15:50.340 --> 00:15:52.200
+have to list every
+single recipient
+
+00:15:52.200 --> 00:15:53.700
+and keep track of
+all the recipients
+
+00:15:53.700 --> 00:15:55.620
+on every single message.
+
+00:15:55.620 --> 00:15:57.990
+But scenarios aren't
+the whole story.
+
+00:15:57.990 --> 00:16:00.630
+So if you think about Zoom,
+for example, it's not just
+
+00:16:00.630 --> 00:16:02.580
+the meeting protocol, right?
+
+00:16:02.580 --> 00:16:05.770
+It's also, for example, that
+you can have text chat on Zoom,
+
+00:16:05.770 --> 00:16:06.270
+right?
+
+00:16:06.270 --> 00:16:08.520
+So there are actually
+multiple scenarios
+
+00:16:08.520 --> 00:16:09.870
+going on at the same time.
+
+00:16:09.870 --> 00:16:13.260
+And each of these scenarios
+is its own kind of innovation,
+
+00:16:13.260 --> 00:16:15.130
+and I call these concepts.
+
+00:16:15.130 --> 00:16:17.340
+So the way I think
+of a software product
+
+00:16:17.340 --> 00:16:21.600
+is basically a composition
+of multiple concepts each
+
+00:16:21.600 --> 00:16:23.970
+characterized by
+its key scenario.
+
+00:16:23.970 --> 00:16:26.700
+So Zoom, for example, has, of
+course, the crucial meeting
+
+00:16:26.700 --> 00:16:29.040
+concept, the one I described.
+
+00:16:29.040 --> 00:16:31.060
+Of course, it has
+video channels as well,
+
+00:16:31.060 --> 00:16:33.210
+which is so obvious I
+didn't describe them.
+
+00:16:33.210 --> 00:16:36.060
+But it has all these
+many other scenarios too.
+
+00:16:36.060 --> 00:16:38.970
+And to use Zoom you
+have to understand
+
+00:16:38.970 --> 00:16:42.240
+each of these concepts and
+its essential scenarios.
+
+00:16:42.240 --> 00:16:44.250
+Some of these are novel.
+
+00:16:44.250 --> 00:16:47.010
+At least prior to Zoom, people
+hadn't done the meeting concept
+
+00:16:47.010 --> 00:16:48.240
+with the idea of the link.
+
+00:16:48.240 --> 00:16:49.870
+Some of them are
+familiar things.
+
+00:16:49.870 --> 00:16:51.840
+So chat, for example,
+the idea of a chat room
+
+00:16:51.840 --> 00:16:53.130
+goes back decades.
+
+00:16:53.130 --> 00:16:54.900
+And some of them are
+completely basic,
+
+00:16:54.900 --> 00:16:58.860
+like the fact of having
+an authenticated user.
+
+00:16:58.860 --> 00:17:01.768
+Concepts, by the way,
+are not features, right?
+
+00:17:01.768 --> 00:17:03.060
+People often ask this question.
+
+00:17:03.060 --> 00:17:04.977
+Well, isn't this just
+the notion of a feature?
+
+00:17:04.977 --> 00:17:06.960
+They're not features
+because, first of all,
+
+00:17:06.960 --> 00:17:10.170
+these concepts represent
+complete coherent functions,
+
+00:17:10.170 --> 00:17:11.640
+not pieces of a function.
+
+00:17:11.640 --> 00:17:13.470
+They're not aspects
+like the idea
+
+00:17:13.470 --> 00:17:15.990
+of encryption, which can be
+sort of layered and applied
+
+00:17:15.990 --> 00:17:16.710
+to anything.
+
+00:17:16.710 --> 00:17:19.020
+They're not individual
+actions, like the feature
+
+00:17:19.020 --> 00:17:21.390
+of being able to reassign
+the host of a call.
+
+00:17:21.390 --> 00:17:23.520
+And they're not user
+interface features,
+
+00:17:23.520 --> 00:17:26.910
+like, for example, the
+provision of shortcuts.
+
+00:17:26.910 --> 00:17:29.040
+The other thing
+that's important is
+
+00:17:29.040 --> 00:17:32.610
+that concepts are truly
+composable services,
+
+00:17:32.610 --> 00:17:35.790
+and they don't rely on
+any base functionality.
+
+00:17:35.790 --> 00:17:37.427
+When people talk
+about features, they
+
+00:17:37.427 --> 00:17:39.510
+have in mind that there's
+some base functionality,
+
+00:17:39.510 --> 00:17:41.250
+and the features are
+like little tweaks
+
+00:17:41.250 --> 00:17:43.200
+that sit on top of the
+base functionality.
+
+00:17:43.200 --> 00:17:45.150
+But that doesn't need
+to be any layering here.
+
+00:17:45.150 --> 00:17:48.510
+These concepts are
+things that you interact
+
+00:17:48.510 --> 00:17:50.400
+with on an equal basis.
+
+00:17:50.400 --> 00:17:52.230
+And there are no
+dependencies between them,
+
+00:17:52.230 --> 00:17:54.480
+which means that they can
+be built independently.
+
+00:17:54.480 --> 00:17:56.460
+So how are these put together?
+
+00:17:56.460 --> 00:17:58.950
+Well, in short, the way
+they're put together
+
+00:17:58.950 --> 00:18:00.240
+is by synchronization.
+
+00:18:00.240 --> 00:18:02.830
+So all we need to
+say, for example,
+
+00:18:02.830 --> 00:18:08.160
+is that in the chat concept,
+you join a chat in Zoom
+
+00:18:08.160 --> 00:18:12.510
+when you start the meeting,
+if you're the person creating
+
+00:18:12.510 --> 00:18:13.170
+the meeting.
+
+00:18:13.170 --> 00:18:15.253
+And if you're the person
+not creating the meeting,
+
+00:18:15.253 --> 00:18:17.460
+you join the chat when
+you join the meeting.
+
+00:18:17.460 --> 00:18:19.470
+And so this idea
+of synchronization
+
+00:18:19.470 --> 00:18:20.880
+allows us to get
+away from having
+
+00:18:20.880 --> 00:18:24.300
+any kind of procedure
+call notion of one concept
+
+00:18:24.300 --> 00:18:26.650
+being superior to another.
+
+00:18:26.650 --> 00:18:30.400
+Now, I don't have a lot of
+time to talk about this,
+
+00:18:30.400 --> 00:18:32.410
+so I'll just say that
+when you actually
+
+00:18:32.410 --> 00:18:35.650
+come to design a concept,
+there's a lot more to say
+
+00:18:35.650 --> 00:18:37.630
+beyond just this scenario.
+
+00:18:37.630 --> 00:18:39.610
+And, in particular,
+you might want
+
+00:18:39.610 --> 00:18:42.400
+to consider details, like well,
+which messages can the user
+
+00:18:42.400 --> 00:18:43.900
+actually read in a chat?
+
+00:18:43.900 --> 00:18:46.370
+And if you want to do that,
+you might need, for example,
+
+00:18:46.370 --> 00:18:50.140
+to decide whether or not a
+user can view messages that
+
+00:18:50.140 --> 00:18:53.950
+have been previously
+displayed prior to them
+
+00:18:53.950 --> 00:18:55.120
+actually joining the chat.
+
+00:18:55.120 --> 00:18:56.830
+And for that, we need
+to design the state
+
+00:18:56.830 --> 00:18:58.747
+and we need to be explicit
+about these things.
+
+00:18:58.747 --> 00:19:01.732
+This, by the, way I believe is
+actually a serious design flaw
+
+00:19:01.732 --> 00:19:03.190
+because it's quite
+an inconvenience
+
+00:19:03.190 --> 00:19:06.200
+when you join a Zoom
+chat that you can't see,
+
+00:19:06.200 --> 00:19:09.420
+for example, any preliminary
+notes that were sent out.
+
+00:19:09.420 --> 00:19:14.180
+So how many of these fundamental
+concepts are there in a product
+
+00:19:14.180 --> 00:19:15.930
+that you need to
+actually differentiate it
+
+00:19:15.930 --> 00:19:16.800
+from other products?
+
+00:19:16.800 --> 00:19:19.530
+Well, some products just
+have one key concept,
+
+00:19:19.530 --> 00:19:22.140
+and I'd argue that Zoom
+and WhatsApp are like that.
+
+00:19:22.140 --> 00:19:25.440
+Some products have a whole
+huge number of concepts.
+
+00:19:25.440 --> 00:19:28.890
+You consider something like
+Photoshop or QuarkXPress
+
+00:19:28.890 --> 00:19:31.440
+that are just piles
+of complex ideas
+
+00:19:31.440 --> 00:19:32.670
+that are developed over time.
+
+00:19:32.670 --> 00:19:34.980
+And some actually have
+no new concepts at all.
+
+00:19:34.980 --> 00:19:38.130
+They basically just
+combine existing concepts
+
+00:19:38.130 --> 00:19:41.580
+in often a quite creative way.
+
+00:19:41.580 --> 00:19:44.772
+And sometimes they do it even by
+taking-- this is Hacker News--
+
+00:19:44.772 --> 00:19:46.980
+they do it by taking a bunch
+of concepts you've seen,
+
+00:19:46.980 --> 00:19:49.440
+posts and comments and
+sessions and upvotes
+
+00:19:49.440 --> 00:19:51.130
+and favorites and
+comments and so on,
+
+00:19:51.130 --> 00:19:53.160
+but putting them together
+in a way that's tuned
+
+00:19:53.160 --> 00:19:56.080
+to a particular kind of domain.
+
+00:19:56.080 --> 00:19:57.840
+So I want to say a
+little bit about how
+
+00:19:57.840 --> 00:20:01.140
+you apply all this stuff.
+
+00:20:01.140 --> 00:20:05.040
+First of all, you can use it
+to diagnose usability problems.
+
+00:20:05.040 --> 00:20:07.800
+Here's one of my favorite ones.
+
+00:20:07.800 --> 00:20:12.640
+Poor old Melania Trump, on
+seeing a rather rude tweet
+
+00:20:12.640 --> 00:20:16.600
+about her in which she was
+made fun of for brushing away
+
+00:20:16.600 --> 00:20:21.160
+her husband's hand in a famous
+video at an airfield somewhere,
+
+00:20:21.160 --> 00:20:25.690
+she rather unfortunately
+liked this tweet.
+
+00:20:25.690 --> 00:20:28.240
+And people were a little puzzled
+about why she'd done this.
+
+00:20:28.240 --> 00:20:31.330
+But in fact, it was not her
+fault. It was Twitter's fault.
+
+00:20:31.330 --> 00:20:34.750
+And the problem was that Twitter
+had actually played around
+
+00:20:34.750 --> 00:20:37.330
+with the whole notion of
+likes and had explained
+
+00:20:37.330 --> 00:20:40.750
+in a completely incoherent way
+what these likes were about.
+
+00:20:40.750 --> 00:20:43.647
+We know that at times the
+star could be confusing.
+
+00:20:43.647 --> 00:20:45.730
+You might like a lot of
+things, but not everything
+
+00:20:45.730 --> 00:20:46.605
+can be your favorite.
+
+00:20:46.605 --> 00:20:48.010
+What does this mean?
+
+00:20:48.010 --> 00:20:50.860
+The problem was that there
+were two fundamental concepts
+
+00:20:50.860 --> 00:20:53.110
+with different
+scenarios at hand here.
+
+00:20:53.110 --> 00:20:55.510
+One was upvote,
+basically saying I
+
+00:20:55.510 --> 00:20:58.390
+want that item to be ranked
+more and everybody can see that.
+
+00:20:58.390 --> 00:21:02.170
+And the other was bookmark,
+save this for me to visit later.
+
+00:21:02.170 --> 00:21:03.920
+And of course,
+Melania Trump thought
+
+00:21:03.920 --> 00:21:05.920
+she was dealing with
+bookmark when, in fact, she
+
+00:21:05.920 --> 00:21:08.020
+was dealing with upvote.
+
+00:21:08.020 --> 00:21:11.290
+And that was the
+nature of the problem.
+
+00:21:11.290 --> 00:21:15.070
+And Twitter, in fact,
+fixed it later in addition
+
+00:21:15.070 --> 00:21:17.260
+to the like, which
+was really the upvote.
+
+00:21:17.260 --> 00:21:20.620
+They eventually, albeit
+buried rather deeply because--
+
+00:21:20.620 --> 00:21:23.350
+this gets back to David's
+point about power and money--
+
+00:21:23.350 --> 00:21:25.510
+because it doesn't serve
+their financial interests.
+
+00:21:25.510 --> 00:21:29.020
+They eventually provided
+a bookmarking feature
+
+00:21:29.020 --> 00:21:31.600
+in a deep inner menu
+that allowed you,
+
+00:21:31.600 --> 00:21:36.940
+strangely under sharing, to
+share a tweet to yourself,
+
+00:21:36.940 --> 00:21:39.803
+which essentially allowed
+you to save it for later.
+
+00:21:39.803 --> 00:21:41.470
+A second thing you
+can do with this idea
+
+00:21:41.470 --> 00:21:43.350
+is you can catalog
+your concepts.
+
+00:21:43.350 --> 00:21:45.850
+And I don't have a lot of time
+to tell you about this except
+
+00:21:45.850 --> 00:21:48.010
+to say that at Palantir
+they've done this
+
+00:21:48.010 --> 00:21:51.340
+because they noticed a kind of
+entropic growth of concepts.
+
+00:21:51.340 --> 00:21:54.640
+And so what they did was
+they built in their ontology
+
+00:21:54.640 --> 00:21:57.490
+a large graph of about
+300 concepts used
+
+00:21:57.490 --> 00:21:59.350
+across all their products.
+
+00:21:59.350 --> 00:22:01.810
+And then they used
+these to basically think
+
+00:22:01.810 --> 00:22:04.540
+about their products across,
+not only different divisions
+
+00:22:04.540 --> 00:22:07.570
+and different roles,
+but they used it also
+
+00:22:07.570 --> 00:22:12.010
+to think about the career
+path of product managers.
+
+00:22:12.010 --> 00:22:14.080
+So basically, they
+gave product managers
+
+00:22:14.080 --> 00:22:16.120
+ownership over
+individual concepts
+
+00:22:16.120 --> 00:22:18.970
+that crossed across
+application boundaries.
+
+00:22:18.970 --> 00:22:22.600
+So what that meant was these
+product managers could ensure
+
+00:22:22.600 --> 00:22:27.070
+that a particular concept was
+actually deployed consistently
+
+00:22:27.070 --> 00:22:29.020
+in different products.
+
+00:22:29.020 --> 00:22:32.920
+And the impacts they anticipate
+from that are basically
+
+00:22:32.920 --> 00:22:36.370
+getting more reuse,
+getting more consistency,
+
+00:22:36.370 --> 00:22:38.680
+and basically having
+greater alignment
+
+00:22:38.680 --> 00:22:41.740
+of understanding across
+the whole company.
+
+00:22:41.740 --> 00:22:44.230
+You can get better reuse.
+
+00:22:44.230 --> 00:22:47.170
+This is an example
+from PowerPoint.
+
+00:22:47.170 --> 00:22:48.760
+So those of you
+who use PowerPoint,
+
+00:22:48.760 --> 00:22:51.010
+I don't honestly understand
+why anyone uses PowerPoint
+
+00:22:51.010 --> 00:22:54.070
+if they have a Mac because
+it's, to be honest, so
+
+00:22:54.070 --> 00:22:55.450
+inferior to Keynote.
+
+00:22:55.450 --> 00:22:57.070
+And this is just one example.
+
+00:22:57.070 --> 00:22:59.710
+It has this completely
+baroque and complicated notion
+
+00:22:59.710 --> 00:23:01.930
+of sections, which
+they invented,
+
+00:23:01.930 --> 00:23:04.840
+which is a complicated
+way of dividing your slide
+
+00:23:04.840 --> 00:23:08.230
+deck into pieces, which has a
+lot of complicated commands.
+
+00:23:08.230 --> 00:23:10.030
+It's very hard to understand.
+
+00:23:10.030 --> 00:23:12.370
+If you look at
+Keynote, at all they
+
+00:23:12.370 --> 00:23:15.850
+have instead is this nudge
+to the right or the left.
+
+00:23:15.850 --> 00:23:17.410
+And why is that so easy to use?
+
+00:23:17.410 --> 00:23:19.060
+Because it's a tree outline.
+
+00:23:19.060 --> 00:23:21.670
+And we're completely
+familiar with that concept.
+
+00:23:21.670 --> 00:23:26.290
+It's completely standard, and
+Apple simply chose to reuse it.
+
+00:23:26.290 --> 00:23:27.970
+More modular implementation.
+
+00:23:27.970 --> 00:23:30.160
+If you break things
+down into concepts,
+
+00:23:30.160 --> 00:23:33.730
+then you can actually build the
+concepts as separate modules.
+
+00:23:33.730 --> 00:23:36.490
+And that's exactly what we teach
+in our software development
+
+00:23:36.490 --> 00:23:38.140
+class to our undergraduates.
+
+00:23:38.140 --> 00:23:41.350
+And my student Santiago
+Perez de Rosso in his thesis
+
+00:23:41.350 --> 00:23:45.890
+a few years ago showed
+that, if you do this,
+
+00:23:45.890 --> 00:23:49.090
+you can actually prebuild
+all the concepts in advance
+
+00:23:49.090 --> 00:23:52.030
+and then build applications
+by essentially just writing
+
+00:23:52.030 --> 00:23:55.810
+glue, HTML style glue
+that basically glues
+
+00:23:55.810 --> 00:23:57.700
+these concepts
+together and produces
+
+00:23:57.700 --> 00:24:00.970
+the behavior of an
+emerging application
+
+00:24:00.970 --> 00:24:04.090
+from the composition
+of familiar concepts.
+
+00:24:04.090 --> 00:24:07.030
+And we're now doing
+some new work on this.
+
+00:24:07.030 --> 00:24:09.040
+I have a project with
+Kevin Sullivan looking
+
+00:24:09.040 --> 00:24:11.110
+weaving together
+different concepts
+
+00:24:11.110 --> 00:24:15.340
+and with an MENG and
+UROPs of mine looking
+
+00:24:15.340 --> 00:24:18.250
+at using LLMs, both
+to generate concepts
+
+00:24:18.250 --> 00:24:20.740
+and these synchronizations
+between them.
+
+00:24:20.740 --> 00:24:23.980
+This is just a screenshot
+from Santiago's work
+
+00:24:23.980 --> 00:24:28.240
+that shows across the top
+a list of final projects
+
+00:24:28.240 --> 00:24:30.520
+from our class and how
+he was able basically
+
+00:24:30.520 --> 00:24:33.820
+to build those projects from
+a list of standard concepts
+
+00:24:33.820 --> 00:24:36.470
+going down the left-hand side.
+
+00:24:36.470 --> 00:24:39.560
+And here I think is the final
+thing I want to point out,
+
+00:24:39.560 --> 00:24:42.680
+which is that, when you start
+thinking about things in terms
+
+00:24:42.680 --> 00:24:46.010
+of standard concepts,
+something interesting happens,
+
+00:24:46.010 --> 00:24:47.990
+which is that you
+start to look at things
+
+00:24:47.990 --> 00:24:49.700
+in a more general way.
+
+00:24:49.700 --> 00:24:52.790
+And that tends to make your
+applications more flexible.
+
+00:24:52.790 --> 00:24:54.980
+So the standard
+concept design move
+
+00:24:54.980 --> 00:24:58.550
+is that you start with a simple
+use case, some requirement.
+
+00:24:58.550 --> 00:25:00.440
+But you don't implement
+that use case.
+
+00:25:00.440 --> 00:25:02.090
+Instead, what you
+do is you consider
+
+00:25:02.090 --> 00:25:03.930
+generalizing it with a concept.
+
+00:25:03.930 --> 00:25:07.610
+So for example, you want to
+break your slides into subsets.
+
+00:25:07.610 --> 00:25:10.790
+So you say, well, what
+about tree outlines, right?
+
+00:25:10.790 --> 00:25:13.670
+Once you have tree outlines,
+you have unbounded depth.
+
+00:25:13.670 --> 00:25:15.800
+You have all kinds of
+other features, right?
+
+00:25:15.800 --> 00:25:19.520
+Another example, in
+Hacker News, right, they
+
+00:25:19.520 --> 00:25:21.860
+have a rule that you can't
+downvote until you've
+
+00:25:21.860 --> 00:25:23.540
+upvoted some number of times.
+
+00:25:23.540 --> 00:25:26.000
+Well, you could just burn that
+into the notion of upvoting.
+
+00:25:26.000 --> 00:25:28.280
+But much better you
+could say, there's
+
+00:25:28.280 --> 00:25:31.040
+a general concept
+of karma here, which
+
+00:25:31.040 --> 00:25:33.860
+is that you accrue points for
+certain kinds of good behavior
+
+00:25:33.860 --> 00:25:35.660
+that you can then spend, right?
+
+00:25:35.660 --> 00:25:39.030
+And once you have that, you can
+do much more flexible things.
+
+00:25:39.030 --> 00:25:41.940
+Suppose you want in your
+app to send an email.
+
+00:25:41.940 --> 00:25:43.770
+You've got a question
+and answer app,
+
+00:25:43.770 --> 00:25:45.362
+and you want to
+email a questioner
+
+00:25:45.362 --> 00:25:46.320
+when there's an answer.
+
+00:25:46.320 --> 00:25:49.500
+Well, don't embed that in
+the precise details, right?
+
+00:25:49.500 --> 00:25:52.470
+Recognize that this is an
+example of a notification.
+
+00:25:52.470 --> 00:25:54.932
+And if you build a generic
+notification concept,
+
+00:25:54.932 --> 00:25:56.640
+you can let the user
+control what they're
+
+00:25:56.640 --> 00:25:59.640
+going to be notified about.
+
+00:25:59.640 --> 00:26:02.370
+How about in
+Mailchimp, for example.
+
+00:26:02.370 --> 00:26:04.980
+There's all this baroque stuff
+about setting the default
+
+00:26:04.980 --> 00:26:08.340
+paragraph style because
+they don't have a style
+
+00:26:08.340 --> 00:26:11.460
+concept that we're familiar with
+from Microsoft Word and pages,
+
+00:26:11.460 --> 00:26:13.270
+and so on.
+
+00:26:13.270 --> 00:26:16.930
+OK, I'm going to skip this
+in the interest of time,
+
+00:26:16.930 --> 00:26:19.480
+but the key point
+is that you get
+
+00:26:19.480 --> 00:26:22.330
+much more powerful and
+flexible and modular
+
+00:26:22.330 --> 00:26:23.435
+systems building this way.
+
+00:26:23.435 --> 00:26:25.060
+I want to close
+actually by showing you
+
+00:26:25.060 --> 00:26:27.940
+something which I think is
+even cooler than that, which
+
+00:26:27.940 --> 00:26:30.130
+is that sometimes when
+you put concepts together
+
+00:26:30.130 --> 00:26:32.290
+you get a curious
+kind of synergy.
+
+00:26:32.290 --> 00:26:34.810
+So here's my favorite
+example, which
+
+00:26:34.810 --> 00:26:40.450
+is the composition of the trash
+concept and the folder concept.
+
+00:26:40.450 --> 00:26:42.130
+Now, this might
+seem bizarre to you
+
+00:26:42.130 --> 00:26:44.050
+because you might think, how
+could they ever be separate?
+
+00:26:44.050 --> 00:26:45.700
+But in fact, in
+early implementations
+
+00:26:45.700 --> 00:26:47.320
+of the trash in
+Microsoft Windows,
+
+00:26:47.320 --> 00:26:49.000
+the trash was not a folder.
+
+00:26:49.000 --> 00:26:51.370
+And when you moved a folder,
+when you deleted a folder,
+
+00:26:51.370 --> 00:26:54.070
+it disaggregated it
+into individual files.
+
+00:26:54.070 --> 00:26:57.640
+But by treating the folder,
+the trash rather, as a folder,
+
+00:26:57.640 --> 00:26:59.380
+you get all kinds of benefits.
+
+00:26:59.380 --> 00:27:02.440
+But it turns out that's
+actually really a subtle design.
+
+00:27:02.440 --> 00:27:04.600
+And one of the reasons
+it's a subtle design
+
+00:27:04.600 --> 00:27:07.960
+is because the trash has to hold
+items from multiple volumes.
+
+00:27:07.960 --> 00:27:11.200
+So it turns out that the trash
+is the only folder that's
+
+00:27:11.200 --> 00:27:14.360
+sortable by volume, which
+is a kind of a weird thing.
+
+00:27:14.360 --> 00:27:16.610
+Furthermore, a really
+cool thing they did,
+
+00:27:16.610 --> 00:27:19.040
+notice that in the Mac
+there's no date deleted.
+
+00:27:19.040 --> 00:27:21.440
+You don't need date
+deleted if you've
+
+00:27:21.440 --> 00:27:24.545
+got a date added metadata
+field in every folder.
+
+00:27:27.150 --> 00:27:29.760
+Here's another really
+cool synergy in MOIRA,
+
+00:27:29.760 --> 00:27:35.130
+which is this very nice email
+system developed at MIT.
+
+00:27:35.130 --> 00:27:37.020
+You can basically
+create a mailing list
+
+00:27:37.020 --> 00:27:39.060
+by listing a bunch
+of people's names.
+
+00:27:39.060 --> 00:27:41.160
+And the question
+was, what if you
+
+00:27:41.160 --> 00:27:44.340
+want the mailing list to be
+owned by more than one person,
+
+00:27:44.340 --> 00:27:45.015
+right?
+
+00:27:45.015 --> 00:27:47.640
+So for example, you've got like
+a professor and the professor's
+
+00:27:47.640 --> 00:27:48.990
+assistant, and you
+want them both to be
+
+00:27:48.990 --> 00:27:50.220
+able to change the list.
+
+00:27:50.220 --> 00:27:53.820
+Well, you could complicate
+the design by saying,
+
+00:27:53.820 --> 00:27:55.710
+let's allow multiple owners.
+
+00:27:55.710 --> 00:27:57.210
+But they did a
+much cooler thing,
+
+00:27:57.210 --> 00:27:59.910
+which was they said, well,
+let's let a list be an owner.
+
+00:27:59.910 --> 00:28:00.990
+And what kind of list?
+
+00:28:00.990 --> 00:28:03.330
+Well, how about a
+mailing list, right?
+
+00:28:03.330 --> 00:28:07.110
+So this is a kind of beautiful
+sort of eating your own tail.
+
+00:28:07.110 --> 00:28:09.390
+It's not a game
+without complications
+
+00:28:09.390 --> 00:28:12.690
+because it turns out that
+this means, for example, you
+
+00:28:12.690 --> 00:28:17.010
+have to be able to say
+that there are some mailing
+
+00:28:17.010 --> 00:28:18.618
+lists that are
+not mailing lists,
+
+00:28:18.618 --> 00:28:20.910
+right, because you don't want
+every administrative list
+
+00:28:20.910 --> 00:28:22.410
+to be used as a mailing list.
+
+00:28:22.410 --> 00:28:25.440
+And it also turns out there's
+a really weird thing which
+
+00:28:25.440 --> 00:28:27.820
+is that MOIRA
+mailing lists allow
+
+00:28:27.820 --> 00:28:31.750
+you to have email addresses of
+people who aren't MIT users.
+
+00:28:31.750 --> 00:28:34.840
+And if you create an admin
+list, all of whose members
+
+00:28:34.840 --> 00:28:37.498
+are nonusers, it
+will let you do it.
+
+00:28:37.498 --> 00:28:39.040
+But you're actually
+now totally hosed
+
+00:28:39.040 --> 00:28:43.750
+because now nobody can
+administer that list.
+
+00:28:43.750 --> 00:28:46.690
+My final example I
+think labels in Gmail.
+
+00:28:46.690 --> 00:28:49.090
+So here's again a beautiful
+example of a synergy.
+
+00:28:49.090 --> 00:28:51.160
+We've got the notion
+of a label, which
+
+00:28:51.160 --> 00:28:53.830
+is a simple concept
+for filtering things.
+
+00:28:53.830 --> 00:28:56.710
+When you click on
+that sent button
+
+00:28:56.710 --> 00:28:59.410
+to see the sent messages,
+all you're seeing
+
+00:28:59.410 --> 00:29:02.890
+are the messages that have had
+a sent label attached to them.
+
+00:29:02.890 --> 00:29:05.140
+And the beauty of this
+scheme is that now,
+
+00:29:05.140 --> 00:29:08.200
+for example, if I want to
+search for all the items
+
+00:29:08.200 --> 00:29:10.930
+that are labeled to do
+and are in the trash,
+
+00:29:10.930 --> 00:29:13.720
+I don't need special features
+for saying what's in the trash.
+
+00:29:13.720 --> 00:29:16.060
+I can just use this
+trash label that
+
+00:29:16.060 --> 00:29:17.680
+was automatically attached.
+
+00:29:17.680 --> 00:29:22.330
+And the mother of all
+synergies is Photoshop.
+
+00:29:22.330 --> 00:29:24.640
+And I think I'm
+running out of time,
+
+00:29:24.640 --> 00:29:29.050
+so I'm going to leave
+for offline discussion
+
+00:29:29.050 --> 00:29:31.390
+to tell you about
+all my enthusiasm
+
+00:29:31.390 --> 00:29:35.230
+for how amazing it is that
+Photoshop managed essentially
+
+00:29:35.230 --> 00:29:40.710
+to make selections and masks
+and channels all the same thing.
+
+00:29:40.710 --> 00:29:42.500
+So the takeaways from this.
+
+00:29:42.500 --> 00:29:45.893
+Mitch Kapoor said, "When
+you go to design a house,
+
+00:29:45.893 --> 00:29:47.060
+you don't go to an engineer.
+
+00:29:47.060 --> 00:29:48.060
+You go to an architect."
+
+00:29:48.060 --> 00:29:50.840
+And the reason for that is
+that the criteria for what
+
+00:29:50.840 --> 00:29:53.030
+makes a good building
+fall outside the domain
+
+00:29:53.030 --> 00:29:54.050
+of engineering.
+
+00:29:54.050 --> 00:29:56.180
+And what we need
+is people who can
+
+00:29:56.180 --> 00:29:59.240
+think about the selection
+of the various components
+
+00:29:59.240 --> 00:30:00.530
+and, of course, their shaping.
+
+00:30:00.530 --> 00:30:02.580
+And that's what
+software designers do.
+
+00:30:02.580 --> 00:30:04.310
+So what I've
+suggested is a new way
+
+00:30:04.310 --> 00:30:06.860
+to think about software
+in which scenarios
+
+00:30:06.860 --> 00:30:09.260
+point to the authentic
+demand that you need.
+
+00:30:09.260 --> 00:30:12.350
+And, by identifying
+constraints and pain points,
+
+00:30:12.350 --> 00:30:14.060
+you can come up
+with new scenarios
+
+00:30:14.060 --> 00:30:16.310
+in which these
+scenarios sometimes
+
+00:30:16.310 --> 00:30:17.630
+characterize applications.
+
+00:30:17.630 --> 00:30:20.840
+But more often, they
+characterize the concepts
+
+00:30:20.840 --> 00:30:24.440
+that are the central
+components of the applications.
+
+00:30:24.440 --> 00:30:27.770
+Applications are then
+compositions of these concepts.
+
+00:30:27.770 --> 00:30:29.570
+And, by thinking
+in those terms, you
+
+00:30:29.570 --> 00:30:32.360
+get greater flexibility
+and reuse and modularity.
+
+00:30:32.360 --> 00:30:35.840
+And that's what my book
+is about, shameless plug.
+
+00:30:35.840 --> 00:30:38.150
+And on my website,
+you'll find lots
+
+00:30:38.150 --> 00:30:42.120
+of blog posts and tutorials
+and rants and why I think
+
+00:30:42.120 --> 00:30:43.680
+actually Zoom is,
+in some respects,
+
+00:30:43.680 --> 00:30:45.420
+a little broken after all--
+
+00:30:45.420 --> 00:30:47.610
+the notion of dark concepts.
+
+00:30:47.610 --> 00:30:50.430
+And people often ask
+about conceptual models,
+
+00:30:50.430 --> 00:30:52.590
+and I talk a little
+bit about why
+
+00:30:52.590 --> 00:30:56.030
+I think conceptual models are
+not the same thing as concepts.
+

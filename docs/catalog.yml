@@ -1,6 +1,35 @@
 # Machine-readable skill index. Keep in sync with skills/ and qa/.
 version: 1
 skills:
+- id: brand-ui-design-cn
+  path: skills/cn/brand-ui-design-cn
+  qa: qa/cn/brand-ui-design-cn
+  display_name: 品牌记忆与界面设计
+  display_name_zh: 品牌记忆与界面设计
+  domain: design
+  subdomains: [ui, brand, cards, visual-hierarchy]
+  summary: Chinese-only UI design principles for brand memory and interface experience.
+  summary_zh: 通过插画与 IP、卡片、信息层级和标签用色六条原则，强化品牌记忆与界面体验。
+  version: 0.1.0
+  agents: [cursor, claude-code, codex, openclaw]
+  distribution: direct-skill
+  language: zh-CN
+  standalone: true
+- id: presentation-making-cn
+  path: skills/cn/presentation-making-cn
+  qa: qa/cn/presentation-making-cn
+  display_name: 演示文稿制作（中文）
+  display_name_zh: 演示文稿制作
+  domain: content
+  subdomains: [presentation, narrative, html-deck, markdown]
+  summary: Chinese-only, explicit-invocation presentation workflow.
+  summary_zh: 从材料理解、对齐与塑形到可记忆的 HTML 或 Markdown 文稿及检视重构。
+  version: 0.1.0
+  agents: [cursor, claude-code, codex, openclaw]
+  compatibility: File read/write access; browser access for HTML visual and interaction verification.
+  distribution: direct-skill
+  language: zh-CN
+  standalone: true
 - id: claude-md
   path: skills/en/claude-md
   qa: qa/en/claude-md
@@ -37,50 +66,101 @@ skills:
   distribution: direct-skill
   language: zh-CN
   translation_of: claude-md
-- id: html-slides
-  path: skills/en/html-slides
-  qa: qa/en/html-slides
-  display_name: HTML Slides — Styled Single-File Decks (Huawei / Apple / Generic)
-  display_name_zh: HTML 胶片 · 华为 / Apple / 通用风格单文件 HTML 演示
-  domain: content
-  subdomains: &html_slides_subdomains
-  - presentation
-  - slides
-  - huawei-style
-  - html-deck
-  summary: Explicit-invocation-only deck builder that confirms the brief, outline, and per-page plan before producing a portable single-file 1920×1080 HTML presentation in a pluggable style, with optional PPTX export.
-  summary_zh: 仅显式调用的胶片生成器；先确认场景、大纲和逐页计划，再生成可移植的单文件 1920×1080 HTML 演示，并可选导出 PPTX。
-  version: 0.1.1
-  agents: &html_slides_agents
+- id: arb
+  path: skills/en/arb
+  qa: qa/en/arb
+  display_name: Architecture Review Board
+  display_name_zh: 架构评审委员会
+  domain: architecture
+  subdomains: &arb_subdomains
+  - architecture-review
+  - adr
+  - design-review
+  summary: Explicit-invocation-only Architecture Review Board skeleton; criteria and verdict template pending.
+  summary_zh: 仅显式调用的架构评审委员会技能骨架；评审准则与结论模板待定。
+  version: 0.1.0
+  agents: &arb_agents
   - cursor
   - claude-code
   - codex
   - openclaw
-  compatibility: Writing the deck needs file read/write access; optional tools/export_pptx.py needs Python 3, Playwright with Chromium, and python-pptx.
-  marketplaces: &html_slides_marketplaces
-  - skills-sh
-  - skillsmp
-  - clawhub
+  compatibility: Requires repository file read/write access.
   distribution: direct-skill
-  clawhub_license: MIT-0 on ClawHub; repository source remains Apache-2.0
-  notes: Huawei assets under assets/huawei are Huawei trademarks bundled for Huawei-style decks only.
   language: en
-  translation_of: html-slides-cn
-- id: html-slides-cn
-  path: skills/cn/html-slides-cn
-  qa: qa/cn/html-slides-cn
-  display_name: HTML 胶片 · 华为 / Apple / 通用风格单文件 HTML 演示（中文）
-  display_name_zh: HTML 胶片 · 华为 / Apple / 通用风格单文件 HTML 演示
-  domain: content
-  subdomains: *html_slides_subdomains
-  summary: Chinese edition. 仅显式调用的胶片生成器；先确认场景、大纲和逐页计划，再生成可移植的单文件 1920×1080 HTML 演示，并可选导出 PPTX。
-  summary_zh: 仅显式调用的胶片生成器；先确认场景、大纲和逐页计划，再生成可移植的单文件 1920×1080 HTML 演示，并可选导出 PPTX。
-  version: 0.1.1
-  agents: *html_slides_agents
-  compatibility: Writing the deck needs file read/write access; optional tools/export_pptx.py needs Python 3, Playwright with Chromium, and python-pptx.
-  marketplaces: *html_slides_marketplaces
+  translation_of: arb-cn
+- id: arb-cn
+  path: skills/cn/arb-cn
+  qa: qa/cn/arb-cn
+  display_name: 架构评审委员会（ARB）
+  display_name_zh: 架构评审委员会
+  domain: architecture
+  subdomains: *arb_subdomains
+  summary: Chinese edition. 仅显式调用的架构评审委员会技能骨架；评审准则与结论模板待定。
+  summary_zh: 仅显式调用的架构评审委员会技能骨架；评审准则与结论模板待定。
+  version: 0.1.0
+  agents: *arb_agents
+  compatibility: Requires repository file read/write access.
   distribution: direct-skill
-  clawhub_license: MIT-0 on ClawHub; repository source remains Apache-2.0
-  notes: Huawei assets under assets/huawei are Huawei trademarks bundled for Huawei-style decks only.
   language: zh-CN
-  translation_of: html-slides
+  translation_of: arb
+- id: source-brief-cn
+  path: skills/cn/source-brief-cn
+  qa: qa/cn/source-brief-cn
+  display_name: 整理＋区分
+  display_name_zh: 整理＋区分
+  domain: content
+  subdomains: [reading, papers, evidence]
+  summary: Concise reading notes distinguishing statement types and evidence status.
+  summary_zh: 整理阅读与论文要点，区分陈述性质、证据状态、高赞、共识与争议。
+  version: 0.1.0
+  agents: [cursor, claude-code, codex, openclaw]
+  distribution: direct-skill
+  language: zh-CN
+  translation_of: source-brief
+- id: source-brief
+  path: skills/en/source-brief
+  qa: qa/en/source-brief
+  display_name: Organize + Distinguish
+  display_name_zh: 整理＋区分
+  domain: content
+  subdomains: [reading, papers, evidence]
+  summary: Concise reading notes distinguishing statement types and evidence status.
+  summary_zh: 整理阅读与论文要点，区分陈述性质、证据状态、高赞、共识与争议。
+  version: 0.1.0
+  agents: [cursor, claude-code, codex, openclaw]
+  distribution: direct-skill
+  language: en
+  translation_of: source-brief-cn
+- id: agent-dx-cli
+  path: skills/en/agent-dx-cli
+  qa: qa/en/agent-dx-cli
+  display_name: Agent DX CLI
+  display_name_zh: 面向智能体的 CLI 工程
+  domain: engineering
+  subdomains: [cli, agent-dx, api, review, refactoring]
+  summary: Explicit-invocation CLI engineering with evidence scoring, safety examples, and GWS practice.
+  summary_zh: 仅显式调用，以十维检查、安全正反例和 GWS 实践指导 CLI 开发、审查与重构。
+  version: 0.1.2
+  agents: [codex]
+  compatibility: Repository access and project-specific build tools; real service validation needs an isolated authorized environment.
+  marketplaces: [clawhub]
+  clawhub_url: https://clawhub.ai/agenticweb4/agent-dx-cli
+  clawhub_license: MIT-0 on ClawHub; repository source remains Apache-2.0
+  distribution: direct-skill
+  language: en
+  translation_of: agent-dx-cli-cn
+- id: agent-dx-cli-cn
+  path: skills/cn/agent-dx-cli-cn
+  qa: qa/cn/agent-dx-cli-cn
+  display_name: 面向智能体的 CLI 工程
+  display_name_zh: 面向智能体的 CLI 工程
+  domain: engineering
+  subdomains: [cli, agent-dx, api, review, refactoring]
+  summary: Explicit-invocation CLI engineering with evidence scoring, safety examples, and GWS practice.
+  summary_zh: 仅显式调用，以十维检查、安全正反例和 GWS 实践指导 CLI 开发、审查与重构。
+  version: 0.1.2
+  agents: [codex]
+  compatibility: Repository access and project-specific build tools; real service validation needs an isolated authorized environment.
+  distribution: direct-skill
+  language: zh-CN
+  translation_of: agent-dx-cli

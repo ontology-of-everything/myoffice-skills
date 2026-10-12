@@ -78,11 +78,28 @@ for base in bases:
             fail(f"catalog language mismatch: {expected}")
         if not (ROOT / "qa" / locale / expected / "validate.sh").is_file():
             fail(f"QA entry missing: {expected}")
-        if not (ROOT / "docs/skills" / locale / f"{expected}.md").is_file():
+        if locale == "cn" and not (ROOT / "docs/skills/cn" / f"{expected}.md").is_file():
             fail(f"skill page missing: {expected}")
 
-orphans = [name for name in cn_names if name.endswith("-cn") and name[:-3] not in bases]
+standalone = {name for name, entry in catalog_by_id.items() if entry.get("standalone") is True}
+for name in standalone:
+    entry = catalog_by_id[name]
+    if name not in cn_names or name[:-3] in bases:
+        fail(f"standalone skill must be Chinese-only: {name}")
+    meta = frontmatter(CN_SKILLS / name / "SKILL.md")
+    if meta.get("name") != name or (meta.get("metadata") or {}).get("language") != "zh-CN":
+        fail(f"standalone skill metadata mismatch: {name}")
+    if entry.get("translation_of") or (meta.get("metadata") or {}).get("translation_of"):
+        fail(f"standalone skill must not name a translation pair: {name}")
+    if entry.get("path") != f"skills/cn/{name}" or entry.get("qa") != f"qa/cn/{name}" or entry.get("language") != "zh-CN":
+        fail(f"standalone catalog mismatch: {name}")
+    if not HAN.search((CN_SKILLS / name / "SKILL.md").read_text(encoding="utf-8")):
+        fail(f"Chinese SKILL.md contains no Chinese prose: {name}")
+    if not (ROOT / "qa/cn" / name / "validate.sh").is_file() or not (ROOT / "docs/skills/cn" / f"{name}.md").is_file():
+        fail(f"standalone QA or skill page missing: {name}")
+
+orphans = [name for name in cn_names if name.endswith("-cn") and name[:-3] not in bases and name not in standalone]
 if orphans:
     fail(f"orphan Chinese skills: {', '.join(orphans)}")
 
-print(f"OK: {len(bases)} localization pairs validated")
+print(f"OK: {len(bases)} localization pairs and {len(standalone)} standalone skills validated")

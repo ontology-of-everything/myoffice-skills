@@ -16,7 +16,7 @@ See [authoring.md](authoring.md) for conventions. Per-skill version lives in `qa
 
 - One skill or one focused change per PR when possible.
 - Keep `skills/<name>/` installable — no test assets inside skill folders.
-- Update `docs/skills/<name>.md` and README skill table for new or changed skills.
+- Update `docs/skills/cn/<name>-cn.md` and README skill table for new or changed skills.
 - CI must pass (`validate` workflow).
 
 ## Commit messages

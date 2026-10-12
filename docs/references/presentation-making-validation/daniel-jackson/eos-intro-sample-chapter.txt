@@ -1,0 +1,1057 @@
+       © Copyright Princeton University Press. No part of this book may be
+       distributed, posted, or reproduced in any form by digital or mechanical
+       means without prior written permission of the publisher.
+
+
+
+
+Contents
+How to Read This Book · 1
+
+Part I: motivations
+1 Why I Wrote This Book · 9
+2 Discovering Concepts · 15
+3 How Concepts Help · 29
+
+Part iI: esSentials
+
+
+
+
+                                                                                 Draft: not for distribution or quotation. © 2018 Daniel Jackson
+4 Concept Structure · 47
+5 Concept Purposes · 59
+6 Concept Composition · 79
+7 Concept Dependence · 99
+8 Concept Mapping · 109
+
+Part IiI: principles
+9 Concept Specificity · 127
+10 Concept Familiarity · 147
+11 Concept Integrity · 157
+
+Questions to Remember · 167
+Acknowledgments · 179
+
+resources
+Explorations & Digressions · 183
+References · 299
+Index of Applications · 309
+Index of Concepts · 311
+Index of Names · 315
+Index of Topics · 317
+
+
+
+
+           For general queries contact webmaster@press.princeton.edu.
+        © Copyright Princeton University Press. No part of this book may be
+        distributed, posted, or reproduced in any form by digital or mechanical
+        means without prior written permission of the publisher.
+
+
+
+
+                                            1
+                      Why I Wrote This Book
+
+
+As an undergraduate in physics, I’d been entranced by the idea that the world
+could be captured by simple equations like F = ma. When I became a program-
+mer, and later a computer science researcher, I gravitated towards the field of
+formal methods, because it promised to do something similar for software: to
+
+
+
+
+                                                                                      Draft: not for distribution or quotation. © 2018 Daniel Jackson
+express its very essence in a succinct logic.
+
+                                  A Passion for Design
+My main research contribution in the 30 years since my PhD has been Alloy,3 a
+language for describing software designs and analyzing them automatically. It’s
+been an exciting and satisfying journey for me, but I came to realize over time
+that the essence of software doesn’t lie in any logic or analysis. What really fas-
+cinated me wasn’t the question that consumed most formal methods research-
+ers—namely how to check that a program’s behavior conforms exactly to its
+specification—but rather the question of design.4
+   I mean “design” here in the same sense that the word is used in other design
+disciplines: the shaping of some artifact to meet a human need. Design, as the
+architect Christopher Alexander put it, is about creating a form to fit a context.
+For software, that means determining what the behavior of the software should
+be: what controls it will offer, and what responses it will provide in return.
+These questions have no right or wrong answers, only better or worse ones.5
+   I wanted to know why some software products seem so natural and elegant,
+react predictably once you master the basics, and let you combine their features
+in powerful ways. And to pinpoint why other products just seem wrong: clut-
+tered with needless complexity, and behaving in unexpected and inconsistent
+ways. Surely, I thought, there must be some essential principles, some theory
+of software design, that could explain all of this. It would not only explain why
+some software products are good and some are bad, but it would help you fix
+the problems and avoid them in the first place.
+
+
+
+            For general queries contact webmaster@press.princeton.edu.
+                                                                             © Copyright Princeton University Press. No part of this book may be
+                                                                             distributed, posted, or reproduced in any form by digital or mechanical
+                                                                             means without prior written permission of the publisher.
+                                                                                             the essence of software
+
+
+                                                                                     Design in Computer Science and Other Fields
+                                                                  I started to look around. Within my own subfield (formal methods, software
+                                                                  engineering and programming languages), such a theory exists for what you
+                                                                  might call “internal design”—namely the design of the structure of the code.
+                                                                  Programmers have a rich language of design, and well-established criteria for
+                                                                  what distinguishes good designs from bad ones. But no such language or crite-
+                                                                  ria exist for software design in the user-facing sense, namely design that deter-
+                                                                  mines how software is experienced as a form in context.6
+                                                                      Internal code design is very important and influences primarily what soft-
+                                                                  ware engineers call “maintainability,” which means how easy (or hard) the code
+
+
+
+
+Draft: not for distribution or quotation. © 2018 Daniel Jackson
+                                                                  is to change over time as needs evolve. It also influences performance and reli-
+                                                                  ability. But the key decisions that determine whether a software application or
+                                                                  system is useful and fulfills its users’ needs lie elsewhere, in the kind of software
+                                                                  design in which the functionality and the patterns of interaction with the user
+                                                                  are shaped.
+                                                                      These big questions were at one time more central in computer science. In
+                                                                  the field of software engineering, they came up in workshops on software de-
+                                                                  sign, specification and requirements; in the field of human-computer interac-
+                                                                  tion, they permeated early work on graphical user interfaces and computational
+                                                                  models of user behavior.7
+                                                                      But as time passed, they became less fashionable, and they faded away. Re-
+                                                                  search in software engineering narrowed, and eliminating defects—whether
+                                                                  by testing or more sophisticated means such as program verification—became
+                                                                  synonymous with software quality.8 But you can’t get there from here: if your
+                                                                  software has the wrong design, there’s no amount of defect elimination that will
+                                                                  fix it, short of going back to the very start and fixing the design itself.9
+                                                                      Research in human-computer interaction (HCI) shifted to novel interaction
+                                                                  technologies, to tools and frameworks, to niche domains, and to other disci-
+                                                                  plines (such as ethnography and sociology). Both software engineering and
+                                                                  HCI embraced empiricism enthusiastically, largely in the misguided hope that
+                                                                  this would bring respectability. Instead, the demand for concrete measures of
+                                                                  success seems to have led researchers towards less ambitious projects that ad-
+                                                                  mit easier evaluation, and has stymied progress on bigger and more important
+                                                                  questions.10
+                                                                                                              10
+
+                                                                                  For general queries contact webmaster@press.princeton.edu.
+        © Copyright Princeton University Press. No part of this book may be
+        distributed, posted, or reproduced in any form by digital or mechanical
+        means without prior written permission of the publisher.
+                            1: why i wrote this book
+
+    Puzzlingly, even as interest in design seems to have waned, talk of “design” is
+everywhere. This is not in fact a contradiction. The talk, almost exclusively, is
+about the process of design, whether in the context of “design thinking” (a com-
+pelling packaging of iterative design processes), or of “agile” software develop-
+ment. These processes are undoubtedly valuable (so long as they are applied
+judiciously and not as panaceas), but they are for the most part content-free. I
+mean that not to disparage but to describe. Design thinking, for example, might
+tell you to develop your solution hand in hand with your understanding of the
+problem, or to engage in alternating phases of brainstorming (“divergence”)
+and reduction (“convergence”). But no design thinking book that I have read
+talks in depth about any particular designs and how the process sheds light on
+
+
+
+
+                                                                                      Draft: not for distribution or quotation. © 2018 Daniel Jackson
+them. The very domain-independence of design thinking may be the key to
+its widespread appeal and applicability—but also the reason it has little to say
+about deeper challenges of design in a particular domain such as software.11
+
+                            Clarity & Simplicity in Design
+When I began the Alloy project, with the goal of creating a design language
+that was amenable to automatic analysis, I was critical of existing modeling and
+specification languages whose lack of tool support rendered them “write-only.”
+This snide dismissal was not entirely unwarranted. After all, why would you go
+to the trouble of constructing an elaborate design model if you couldn’t then
+do anything with it? I argued, in particular, that the designer’s effort should
+be rewarded immediately with “push-button automation” that would instantly
+give you feedback in the form of surprising scenarios that would challenge you
+to think more deeply about your design.12
+   I don’t think I was wrong, and Alloy’s automation did indeed change the
+experience of design modeling. But I had underestimated the value of writing
+down a design. In fact, it was a not very well guarded secret amongst formal
+methods researchers (who were eager to demonstrate the efficacy of their tools
+by finding flaws in existing designs) that a high proportion of the flaws were
+detected before the tools were even run! Just transcribing the design into logic
+was enough to reveal serious problems. The software engineering researcher
+Michael Jackson credits not the logic per se but the very difficulty of using it,
+and once mischievously suggested that the quality of software systems might
+be improved if designers were simply required to record their designs in Latin.
+                                             11
+
+            For general queries contact webmaster@press.princeton.edu.
+                                                                             © Copyright Princeton University Press. No part of this book may be
+                                                                             distributed, posted, or reproduced in any form by digital or mechanical
+                                                                             means without prior written permission of the publisher.
+                                                                                             the essence of software
+
+                                                                      Clarity is good not only for finding design flaws after the fact. It is also the
+                                                                  key to good design in the first place. In teaching programming and software
+                                                                  engineering over the last thirty years, I’ve become increasingly convinced that
+                                                                  the determinant of success when you’re developing software isn’t whether you
+                                                                  use the latest programming languages and tools, or the management process
+                                                                  you follow (agile or otherwise), or even how you structure the code. It’s simply
+                                                                  whether you know what you are trying to do. If your goals are clear, and your
+                                                                  design is clear—and it’s clear how your design meets the goals—your code will
+                                                                  tend to be clear too. And if something isn’t working, it will be clear how to fix
+                                                                  it.13
+                                                                      It is this clarity that distinguishes great software from the rest. When the
+
+
+
+
+Draft: not for distribution or quotation. © 2018 Daniel Jackson
+                                                                  Apple Macintosh came out in 1984, people could see immediately how to use
+                                                                  folders to organize their files; the complexities of previous operating systems
+                                                                  (such as Unix, which made even the command to move files between folders
+                                                                  complicated) seemed to have evaporated.
+                                                                      But what exactly is this clarity, and how is it achieved? As early as the 1960s,
+                                                                  the central role of “conceptual models” has been recognized. The challenge was
+                                                                  not merely to convey the software’s conceptual model to the user so that her
+                                                                  internal version (“mental model”) was aligned with the programmers’, but to
+                                                                  treat it as a subject of design in its own right. With the right conceptual model,
+                                                                  the software would be easy to understand and thus easy to use. This was a great
+                                                                  idea, but nobody seems to have pursued it, and so until now “concepts” have
+                                                                  remained a vague, if inspiring, notion.14
+
+                                                                                              How This Project Came About
+                                                                  Convinced that conceptual models were indeed the essence of software, I start-
+                                                                  ed about eight years ago trying to figure out what they might be. I wanted to
+                                                                  give them concrete expression, so that I could point to some software’s concep-
+                                                                  tual model, compare it to others (and to the mental models of users), and have
+                                                                  an explicit focus for design discussions.
+                                                                     That didn’t seem so hard. After all, a plausible first cut at a conceptual mod-
+                                                                  el might be just a description of the software’s behavior, made suitably abstract
+                                                                  to remove incidental and “non-conceptual” aspects (such as the details of the
+                                                                  physical user interface). What proved much harder was finding appropriate
+
+
+                                                                                                              12
+
+                                                                                 For general queries contact webmaster@press.princeton.edu.
+        © Copyright Princeton University Press. No part of this book may be
+        distributed, posted, or reproduced in any form by digital or mechanical
+        means without prior written permission of the publisher.
+                            1: why i wrote this book
+
+structure in the model. I had an inkling that a conceptual model should be
+made up of concepts, but I didn’t know what a concept was.
+    In a social media app such as Facebook, for example, it seemed to me that
+there should be a concept associated with liking things. This concept surely
+wasn’t a function or action (such as the behavior bound to the button you click
+to like a post); there are too many of those, and they only tell part of the story.
+It also surely wasn’t an object or entity (such as the “like” itself that your action
+produced), since at the very least the concept seemed to be about the relation-
+ship between things and their likes. It also seemed essential to me that the con-
+cept of liking was not associated with any particular kind of thing: you could
+like posts, comments, pages, and so on. The concept, in programming lingo, is
+
+
+
+
+                                                                                        Draft: not for distribution or quotation. © 2018 Daniel Jackson
+“generic” or “polymorphic.”
+
+                         This Book: Opening a Conversation
+This book is the result of my explorations to date. Driven by dozens of design
+issues in widely used applications, I’ve evolved a new approach to software de-
+sign, refining and testing it along the way. A happy aspect of this project has
+been that every app failure or frustration had a silver lining: a chance to extend
+my repertoire of examples. It has also given me greater sympathy and respect
+for the designers when my analysis revealed the full complexity of the problem
+they faced.
+   Of course, the problem of software design is not solved. But as my friend
+Kirsten Olson wisely advised me: a book should aim to start a conversation,
+not to end one. In the course of giving many talks about this project, I’ve been
+thrilled to discover that it seems to resonate with audiences more than any of
+my previous ones. I suspect this is because software design is something we all
+want to talk about, but we have not known how to have that conversation.
+   So to you, my readers—fellow researchers, designers and users—I present
+this book as my opening gambit in what I hope to be a fruitful and enjoyable
+conversation.
+
+
+
+
+                                             13
+
+            For general queries contact webmaster@press.princeton.edu.
+         © Copyright Princeton University Press. No part of this book may be
+         distributed, posted, or reproduced in any form by digital or mechanical
+         means without prior written permission of the publisher.
+
+
+
+
+Index of Applications
+
+Adobe Illustrator 53                              Calendly 34
+Adobe InDesign 31, 51, 53, 121–122, 161–          Carbonite 117
+   162, 244, 265–266, 296                         change.org 112
+Adobe Lightroom 95, 120–121, 138, 151–            Chip and PIN 70, 258
+   153, 247, 271–272, 281–282, 282, 290, 293      Crashplan 117
+Adobe Photoshop 33, 34, 68, 90, 211, 250,         CSS 256–257
+   267–269, 274, 286–288, 290
+Amazon Prime 113                                  Dropbox 17–23, 40, 50, 203–205, 205–206
+Apple Calendar 92–94                              Drupal 214, 289
+Apple Color Picker 54, 236                        Emacs 31
+
+
+
+
+                                                                                                   Draft: not for distribution or quotation. © 2018 Daniel Jackson
+Apple Contacts 153–154, 294                       Epson (printer) 94, 137, 286
+Apple Finder 243, 282
+Apple HyperCard 290                               Facebook 13, 29, 69, 104, 133–139, 141–143,
+Apple iCloud 40                                      147, 148, 238, 251, 277, 288
+Apple iPhone 215                                  Fujifilm (camera) 138–139, 208
+Apple iPod 212, 214
+Apple iTunes 214–215                              Git 134, 204, 254
+Apple Keynote 73, 106, 129, 149–151, 209,         Gitless 254
+   210, 274, 278                                  Gmail 37, 50, 89, 93, 114–116, 123, 128, 130,
+Apple Lisa 33, 47                                    132, 136, 136–139, 143, 213, 243, 266, 271,
+Apple Macintosh 12, 24, 33, 47, 90, 188,             279–280, 283
+   204, 206                                       Google Apps 25, 93, 164, 271
+Apple Mail 50, 60, 118–119, 123, 128, 131,        Google Calendar 92–94
+   279                                            Google Docs 60, 61, 237
+Apple Numbers 74–76                               Google Drive 50, 162–164, 296, 297
+Apple Pages 51, 53, 121–122, 161–162, 295–        Google Forms 95, 272
+   296                                            Google Groups 94–96, 148
+Apple Photos 40                                   Google Hangouts 73, 198
+Apple Podcasts 88                                 Google Sheets 95
+Apple Preview 210                                 Google Slides 274
+Apple Safari 105, 278                             Hacker News 288
+Apple TextEdit 160–162, 224, 296
+Apple Trash 47–51, 91–92, 212, 220, 243,          Instagram 147
+   264, 270
+Atom 31                                           LaTeX 32
+                                                  LinkedIn 41
+Backblaze 16–17, 111–112, 116–118, 123, 280       Linux 50
+BBEdit 31, 291
+Bravo 237                                         Mastermatic 266
+
+
+
+
+              For general queries contact webmaster@press.princeton.edu.
+                                                                              © Copyright Princeton University Press. No part of this book may be
+                                                                              distributed, posted, or reproduced in any form by digital or mechanical
+                                                                              means without prior written permission of the publisher.
+                                                                                                the essence of software
+
+                                                                  Mercurial 134                                   Reddit 288
+                                                                  Microsoft Outlook 270–271
+                                                                  Microsoft PowerPoint 53, 129, 149–151, 209,     Scribus 31
+                                                                    274, 291–292, 292                             Signal 142
+                                                                  Microsoft Publisher 31                          Skype 198
+                                                                  Microsoft Teams 73                              Slack 142, 148
+                                                                  Microsoft Windows 24, 90, 208, 237, 270         SnapChat 147
+                                                                  Microsoft Word 31, 51, 53, 121–122, 211, 237,   Squarespace 129
+                                                                    243, 247, 265                                 StackExchange 101
+                                                                  Moira 89, 266                                   Sublime 31
+                                                                  Multics 205                                     Subversion 134
+
+                                                                  Netflix 142, 273                                Teabox 267
+                                                                  NokNok 294                                      Therac-25 96, 273
+                                                                                                                  TikTok 274
+
+
+
+
+Draft: not for distribution or quotation. © 2018 Daniel Jackson
+                                                                  Open Office 31                                  Todoist 81
+                                                                  OpenTable 251, 265                              Tumblr 93
+                                                                  Oracle Java 109–111                             Twitter 29, 65, 93, 134, 147, 148, 255–256,
+                                                                  OS X (macOS) 208                                   290
+                                                                     El Capitan 50
+                                                                     Lion 51, 64                                  Unix 12, 203–205
+                                                                     Mountain Lion 255                            VisiCalc 34, 289
+                                                                  PayPal 114                                      WhatsApp 147, 148, 274
+                                                                  Piazza 101                                      WordPerfect 31
+                                                                  PostScript 160                                  WordPress 289
+                                                                  QuarkXPress 31, 53                              Zoom 73, 96, 131, 197, 272–273, 283
+                                                                  Quora 70, 101                                   Zotero 120
+
+
+
+
+                                                                                                              310
+
+                                                                                     For general queries contact webmaster@press.princeton.edu.
+         © Copyright Princeton University Press. No part of this book may be
+         distributed, posted, or reproduced in any form by digital or mechanical
+         means without prior written permission of the publisher.
+
+
+
+
+Index of Concepts
+access control 86, 261                          chatroom 148
+account 239                                     chip 70
+action 153, 290                                 class (CSS) 53
+adjustment 240                                  cleared check 67
+administrative group 89                         cloud app 164
+adverse interaction 216                         collateral 239
+animation 106, 278, 279                         collection 120
+article 174                                     color theme 53
+aspect ratio 138, 139                           comment 29, 93, 104, 148, 174, 246, 246–
+asset 239, 240                                     247, 276–277, 277
+audio mute 96                                   commit 135
+
+
+
+
+                                                                                                 Draft: not for distribution or quotation. © 2018 Daniel Jackson
+auditing 41                                     contact 87, 153, 154
+authentication 41, 239, 241                     conversation 30, 114, 279
+authorization 41                                cookie 105, 278
+auto caption 274                                correspondent 128, 169
+available funds 66                              coupon 267
+                                                cropping 170, 286, 288
+backup 16, 17, 111, 128                         cursor 291
+bank 239
+battery 73, 260                                 delegate forwarding 63
+BCC 136                                         direct flight 71
+bookmark 61, 66, 105, 134, 278                  directory 203
+boxing 254                                      domain name 87, 210
+branch 254                                      donation 113
+breakout 283                                    do not disturb 112
+broadcast 131, 283                              dose 42, 216
+
+cache 105                                       editor buffer 64, 254
+calendar event 92, 272                          email 30, 85, 86, 176, 261, 263, 295
+call 15, 274                                    email address 93
+call forwarding 62, 87                          equity 239
+capability 41                                   event type 34
+category 130, 170                               existence coupling 84
+cellular 88
+certificate 35, 105                             favorite 65–66, 105, 134, 148, 255, 278
+channel 90, 148, 211, 240, 267–270              FDIC insurance 239
+chapter 31                                      filter 132, 281–282
+character 31                                    flag 118, 281, 283, 284
+character style 278                             folder 15, 30, 90–92, 120, 172, 176, 177, 203,
+chat 131, 283                                       204, 243, 270, 271, 279
+                                                follower 134, 148
+
+
+
+
+             For general queries contact webmaster@press.princeton.edu.
+                                                                               © Copyright Princeton University Press. No part of this book may be
+                                                                               distributed, posted, or reproduced in any form by digital or mechanical
+                                                                               means without prior written permission of the publisher.
+                                                                                                  the essence of software
+
+                                                                  follow-me forwarding 63                              master page 265
+                                                                  format 32, 121, 211, 225, 244                        master slide 106, 274
+                                                                  format toggle 159–162, 164, 296                      message 148
+                                                                  formula 34                                           metadata 21, 241
+                                                                  free sample 89                                       moderation 38, 39, 148
+                                                                  frequent flyer 36, 114, 212
+                                                                  frequently visited 105, 278                          nickname 153, 154, 294
+                                                                  friend 30, 86, 104, 133, 134, 148, 277               no-show 56
+                                                                                                                       notification 38, 69, 87, 97, 148, 158, 171, 243,
+                                                                  group 38, 44, 148, 237–238                              245
+                                                                  group directory 94
+                                                                                                                       object list view 209
+                                                                  hashtag 290                                          outline tree 151, 279
+                                                                  holding 240
+                                                                  HTML 34                                              page 32
+
+
+
+
+Draft: not for distribution or quotation. © 2018 Daniel Jackson
+                                                                  HTTP 87                                              page cache 35
+                                                                  hypertext 290                                        paper feed 137, 286
+                                                                                                                       paper option 94
+                                                                  identification 101–104, 274, 277                     paper size 137, 286
+                                                                  image quality 138                                    paper source 94
+                                                                  image size 67–69, 138, 139, 256–257                  paragraph 31, 32, 106, 211, 225, 244
+                                                                  index 254                                            paragraph style 278
+                                                                  install 110                                          password 177, 241
+                                                                  interbank transfer 239                               permission 94
+                                                                  invitation 38, 92                                    petition 112–114, 113
+                                                                                                                       phone call 87
+                                                                  karma 288                                            photo 277
+                                                                  keyword 282                                          PIN 70
+                                                                  label 30, 37, 81–85, 85–88, 88–90, 99, 114–          pixel 240
+                                                                      116, 130, 168, 176, 213, 262, 263, 266, 279–     pixel array 67, 68, 267, 269
+                                                                      280, 281                                         podcast 88
+                                                                  layer 33, 34, 106, 167, 211, 240, 250, 268, 274,     poke 63, 251
+                                                                      290                                              post 29, 38, 86, 87, 93, 104, 105, 148, 167, 174,
+                                                                  like 13, 29, 66, 105, 141–143, 170, 278, 288            232, 238, 243, 246, 247, 276, 277
+                                                                  line 31                                              precis 135
+                                                                  link 34                                              prescription 216
+                                                                  loan 239                                             preset 138, 151–153, 293–294
+                                                                  log 270                                              preset station 253
+                                                                                                                       private browsing 35, 105, 278
+                                                                  mailbox 30                                           profile 238, 273
+                                                                  mailing list 89                                      profiling 142, 143
+                                                                  markup 290                                           publication 240
+                                                                  mask 33, 34, 90, 211, 268, 290                       push poll 71
+                                                                  master 266
+                                                                                                                       Q&A 101–102, 102–104, 275
+
+                                                                                                                     312
+
+                                                                                     For general queries contact webmaster@press.princeton.edu.
+          © Copyright Princeton University Press. No part of this book may be
+          distributed, posted, or reproduced in any form by digital or mechanical
+          means without prior written permission of the publisher.
+                                      index of concepts
+
+raised hand 96                                       stylesheet 106
+range 74, 74–76, 172                                 style (TextEdit) 54
+rating 148, 233                                      subject line 135, 136
+reaction 141–143, 278                                subscription 148
+reading list 106, 278                                swatch (Illustrator) 53, 54
+recent activity 148                                  synchronization 40, 163, 164, 214–215, 297
+recommendation 142, 143, 288
+recording 101, 103, 104, 277                         table 176
+reference 34                                         tag 69, 102, 104, 277
+reply 104, 277, 278                                  target 73
+request 38                                           template 129, 140
+resampling 288                                       text block 106
+reservation 15, 55–57, 58, 72, 158, 176, 201,        text flow 32
+    220, 223, 227, 229, 230, 231, 233, 234, 236,     text style 106
+                                                     theme 106, 129
+
+
+
+
+                                                                                                        Draft: not for distribution or quotation. © 2018 Daniel Jackson
+    237, 238, 239, 243, 245, 251, 263, 264, 265
+review 158, 265, 285                                 this object 255
+rule 132                                             threaded comment 278
+                                                     timeline 238
+save as 255                                          title 93
+seat 36                                              todo 81, 82, 83, 84, 85, 86, 88, 99, 234, 262
+seat allocation 229                                  transition 278
+section 31, 60, 61, 150, 171, 212, 291               trash 33, 34, 47–51, 61, 74, 89, 90–92, 172,
+selection 90, 268, 282, 291                              176, 177, 205, 219–220, 220–221, 223, 225,
+selection pane 209                                       228, 229, 230, 237, 238, 240, 243, 245, 262,
+shape 106                                                295, 297
+shape style 278                                      tweet 93
+shared song 274                                      two-factor authentication 41, 215
+sharing 21                                           typeface 159, 160, 161
+shopping cart 89
+slide 106                                            Unix folder 22, 270
+slide group 149–151                                  unread 87
+slideshow 73                                         upvote 15, 39, 66, 87, 101, 102, 103, 104, 109,
+social security number 237                              141–143, 148, 241, 277, 278, 288, 289
+song 36, 212                                         URL 34, 105, 167, 232, 290
+special block 106, 278, 279                          user 70, 101, 102, 103, 104, 105, 273, 275
+staging area 254                                     username 93
+star 283, 284                                        VIP 60
+stash 254
+status update 238                                    web service 210, 211
+stock 239                                            Wi-Fi 88
+style 32, 51–54, 106, 121, 129, 211, 220, 223,
+    224, 225, 229, 235, 236, 237, 238, 240, 241,     Zoom session 272
+    243, 244, 245, 253, 263, 265, 266, 274
+
+
+                                                   313
+
+               For general queries contact webmaster@press.princeton.edu.
+                                                                  © Copyright Princeton University Press. No part of this book may be
+                                                                  distributed, posted, or reproduced in any form by digital or mechanical
+                                                                  means without prior written permission of the publisher.
+
+
+
+
+Draft: not for distribution or quotation. © 2018 Daniel Jackson
+
+
+
+
+                                                                      For general queries contact webmaster@press.princeton.edu.
+         © Copyright Princeton University Press. No part of this book may be
+         distributed, posted, or reproduced in any form by digital or mechanical
+         means without prior written permission of the publisher.
+
+
+
+Index of Names
+Adams, President John 196                       Hoare, Tony 189, 197, 263
+Aldrich, Jonathan 193                           Hollan, Jim 252
+Alexander, Christopher 9, 194, 195, 258, 291    Hutchins, Ed 252
+Bachman, Charles 240                            Ingram, Matthew 255
+Batory, Don 247                                 Isaacson, Walter 212
+Berners-Lee, Tim 290                            Ive, Jony 183
+Bjorner, Dines 203
+Bossavit, Laurent 193                           Jackson, Michael 11, 195, 202, 213, 222, 249,
+Bricklin, Dan 34, 289                              250, 259
+Brignull, Harry 279                             Jackson, Tim 219
+Bringhurst, Robert 195                          Jacobson, Ivar 224
+
+
+
+
+                                                                                                Draft: not for distribution or quotation. © 2018 Daniel Jackson
+Brooks, Fred 100, 199–200                       Jen, Natasha 195
+Bruns, Glen 248                                 Jobs, Steve 36, 183, 212
+Buxton, Bill 192, 207                           Kaashoek, Frans 203
+Card, Stuart 188, 198, 199                      Kapor, Mitchell 184, 185, 186
+Charles, Prince of Wales 153, 294               Kleer, Johan de 294
+Chen, Peter 200                                 Ko, Amy 211
+Codd, Edgar 289                                 Koppel, Jimmy 275
+Constantine, Larry 258                          Lampson, Butler 203, 237
+Cunha, Alcino 230                               Latour, Bruno 264
+Dijkstra, Edsger 197, 213, 264                  Leveson, Nancy 273
+Dorsey, Jack 41                                 Levy, Mattys 195
+                                                Liddle, David 186
+Eames, Charles 183                              Linnaeus, Carl 236
+Eames, Ray 183
+Egan, Kieran 286                                Madrigal, Alexis 237
+Elizabeth II, Queen 153, 294                    McIlroy, Doug 196
+Evans, Eric 202                                 McKim, Robert 249
+                                                Menzies, Tim 187
+Faste, Rolf 249                                 Mitnick, Kevin 215
+Floyd, Bob 189                                  Molich, Rolf 188
+Foley, James 206                                Moran, Tom 188, 198, 199, 206
+Fowler, Martin 201                              Mott, Tim 237
+Fu, Kevin 215                                   Mylopoulos, John 200
+Greenberg, Saul 192                             Newell, Allen 188
+Green, Thomas 188, 207                          Newton, Casey 255
+Gunter, Carl 249                                Newton, Isaac 222
+Gunter, Elsa 249                                Nielsen, Jakob 188
+
+
+
+
+              For general queries contact webmaster@press.princeton.edu.
+                                                                              © Copyright Princeton University Press. No part of this book may be
+                                                                              distributed, posted, or reproduced in any form by digital or mechanical
+                                                                              means without prior written permission of the publisher.
+                                                                                               the essence of software
+
+                                                                  Norman, Don 26, 43, 188, 198, 216, 219, 251,     Suh, Nam 195
+                                                                    252, 293
+                                                                                                                   Tesler, Larry 237
+                                                                  Olson, Kirsten 13                                Thimbleby, Harold 189, 197, 216, 223
+                                                                  Ostroy, Andy 65                                  Tognazzini, Bruce 188
+                                                                  Ovide, Shira 197                                 Tschichold, Jan 195
+                                                                                                                   Turner, Clark 273
+                                                                  Parnas, David 192, 247, 274, 276
+                                                                  Perez De Rosso, Santiago 214, 254                Uhlrich, Karl 284
+                                                                  Perrow, Charles 195
+                                                                  Petroski, Henry 195                              van Dam, Andries 206
+                                                                  Polanyi, Michael 195, 222                        van Lamsweerde, Axel 250
+                                                                  Pomiane, Edouard de 1, 5, 183                    Victor, Bret 208
+                                                                                                                   Vincenti, Walter 289
+                                                                  Rose, David 208                                  von Hippel, Eric 290
+
+
+
+
+Draft: not for distribution or quotation. © 2018 Daniel Jackson
+                                                                  Rumsfeld, Donald 259
+                                                                                                                   Wheeler, David 241
+                                                                  Saca, Chris 255                                  Whitney, Eli 196
+                                                                  Saltzer, Jerry 203                               Winograd, Terry 184
+                                                                  Seely Brown, John 294
+                                                                  Seward, Don 258                                  Yu, Eric 258
+                                                                  Shneiderman, Ben 216                             Zave, Pamela 249, 251
+                                                                  Simon, Herb 258                                  Zhang, Kelly 205
+                                                                  Simonyi, Charles 237
+                                                                  Spang, Rebecca 237
+
+
+
+
+                                                                                                                 316
+
+                                                                                   For general queries contact webmaster@press.princeton.edu.
+         © Copyright Princeton University Press. No part of this book may be
+         distributed, posted, or reproduced in any form by digital or mechanical
+         means without prior written permission of the publisher.
+
+
+
+Index of Topics
+abstraction 25–26                               call forwarding 62–63, 87, 251, 295
+access control 86                               cognitive dimensions of notations 188, 207
+accessibility 24                                commit graph 134–139
+action 49                                       compatibility 241
+    ambiguous 120                               composition 79–97
+    formalized 227                                  collaborative 85–88
+    inferred 87                                     conventional 79–80
+    not in logic 231                                free 81–85
+    overcomplicated 175                             preserves concept behavior 261
+affordance 188, 293                                 semantics 260–264
+Afghanistan 72                                      state-based 269–270
+
+
+
+
+                                                                                             Draft: not for distribution or quotation. © 2018 Daniel Jackson
+agile development 11, 209, 224                      synchronization 80
+airlines 36, 113, 212, 236                          synergistic 88–90, 114
+Alloy (language) 9, 184                             views and, 269–270
+    automation and, 11                          concept
+    concepts and, 225                               abstract type vs. 246–247
+    exploration and, 197                            actions 49, 175, 227
+    operational principle in, 230                   age 167
+analytics 86                                        API design and, 178
+anthropomorphism 264                                basis of design critique 42
+assurance case 259                                  behavior 57, 240–241
+auditing 86                                         catalog 173, 175
+authentication 35                                   competitors’ 169
+                                                    complicated 145
+backup                                              composite 176
+   cloud storage and, 40                            composition 79–97, 99
+   confusing 16–17, 111–112                         conformity 153–154
+   deletion and, 128                                consistent subset 103
+   Google Drive 297                                 core 35–36, 167
+   restore 116–118, 280                             costs & benefits 37–38
+   version control and, 134–139                     data model 58
+battery failure 72–73                               defines app 29–31
+beneficent difficulty 250                           defines app family 31–33
+B (formal method) 196                               defines business 35–36
+bird song app 100–101                               dependence 99–107, 102–104, 172, 174,
+bloat, in applications 209                              246, 275–277
+bounded context 202                                 dependence diagram 102–104
+Bringing Design to Software (book) 185              deterministic 228
+browser 35, 105                                     dishonest 36
+bugs, and verification 189                          evolving 237–248
+
+
+
+
+              For general queries contact webmaster@press.princeton.edu.
+                                                                              © Copyright Princeton University Press. No part of this book may be
+                                                                              distributed, posted, or reproduced in any form by digital or mechanical
+                                                                              means without prior written permission of the publisher.
+                                                                                               the essence of software
+
+                                                                  concept, continued                               concept, continued
+                                                                     explanation order 104, 173                        shared across family 168
+                                                                     familiarity 147–155, 171                          specificity 127–145, 153
+                                                                     feature vs. 247–248                               splitting 171
+                                                                     flaw in code 178                                  state 48, 52
+                                                                     freestanding 99–107, 157, 245–246, 275,           stateful 241–242
+                                                                         294                                           structure 47–58
+                                                                     generic 13, 101–102, 123, 164, 174, 176,          synchronization 157, 175
+                                                                         234, 243–245                                  synergy 172
+                                                                     handbook 39, 173, 175                             tricky 34–35
+                                                                     happy and sad 170                                 troubled 168
+                                                                     identifying usability snags 40                    vocabulary 169
+                                                                     implementation 174–175                        conceptual integrity 199–200
+                                                                     integrity 157–164, 172, 261                   conceptual modeling
+
+
+
+
+Draft: not for distribution or quotation. © 2018 Daniel Jackson
+                                                                     inventive 236–238                                 field 200–201
+                                                                     inventory 36, 100–101                             origins 198–200
+                                                                     key characteristics 236–248                   concreteness fading 243
+                                                                     localizes data model 242–243                  consistency 25
+                                                                     localizes design 47                           correctness 189
+                                                                     mapping 109–123, 172, 199, 281–282            critical systems 215
+                                                                     medical 216                                   crowdsourcing 101, 103
+                                                                     mental concept vs. 248                        CSP (Communicating Sequential
+                                                                     misfit 154                                        Processes) 263–264
+                                                                     missing 169
+                                                                     modularity 177–178                            dark pattern 112–114
+                                                                     most valuable 168                             data model 58
+                                                                     name 48, 221                                  defect elimination
+                                                                     near miss 236                                    focus of research 10
+                                                                     one-to-one with purpose 127–145                  parable 191–192
+                                                                     operational principle 49, 51, 56, 61, 74,        software quality and, 190–192
+                                                                         110, 113, 123, 158, 170, 221–222          Demeter, Law of 276
+                                                                     overloaded 132–139, 144, 145, 170             dependability case 259
+                                                                     product differentiator 33–34, 274             dependence
+                                                                     purpose 48, 59–77, 168, 173                      between concepts 99–107
+                                                                     purposeless 127, 144, 254                        concept vs. code 275–277
+                                                                     purposive 238–240                                diagram 102–104, 174
+                                                                     redundant 130–132, 144, 145, 170, 283            emerges from details 277
+                                                                     responds to problem 273–274                      module vs. concept 245
+                                                                     reuse 39, 147–151                                Parnas definition 274–275
+                                                                     security and safety 41–42, 215                   primary vs. secondary 277, 278
+                                                                     seed 101                                         significant idea 187
+                                                                     semantics 225–226, 225–231                    design
+                                                                     separating concerns 38                           axiomatic 195, 285
+                                                                                                                      clarity and, 11–12
+
+                                                                                                                 318
+
+                                                                                   For general queries contact webmaster@press.princeton.edu.
+        © Copyright Princeton University Press. No part of this book may be
+        distributed, posted, or reproduced in any form by digital or mechanical
+        means without prior written permission of the publisher.
+                                   index of topics
+
+design, continued                              engineering, vs. science 222
+   critique 42                                 entity-relationship diagram 58
+   democratization of 194
+   domain-driven 202–203                       failures, of software 195
+   expert vs. novice 147                       familiarity, of concepts 147–155, 171
+   HCI research 188–189                        family, of applications 103, 168, 247–248
+   importance of details 183, 195              faucet 63–64, 252
+   inevitability 292–293                       feature
+   internal, of software 10, 186                   concept vs. 247–248
+   levels 23–26, 206–207                           diagram 277
+   meaning of term 9, 185–186                      interaction 248, 294–295
+   normal vs. radical 289–290                  Fitts’s law 24, 208
+   novelty 195                                 fonts, professional 160
+   origins of software 184–186                 formal methods
+                                                   automation and, 11
+
+
+
+
+                                                                                           Draft: not for distribution or quotation. © 2018 Daniel Jackson
+   other domains 195
+   pattern 194, 195, 291                           benefits of modeling alone 11
+   principles 216–219                              in general 9
+   reuse and, 194                                  model-based 196
+   safety 41–42, 216                               specification languages 196–197
+   security 41–42, 215                             verification 189–190
+   software engineering research 187               write-only 11
+   teams 38                                    formal methods, specific
+   top-down 213                                    Alloy 9, 11, 184, 197, 225, 230, 235
+   typography 195                                  B 196
+   user-centered 188                               Electrum 184, 227
+design journal 173                                 Larch 196, 197
+Design of Everyday Things (book) 198,              OBJ 196
+   216, 219, 251, 252                              TLA 231
+design thinking                                    VDM 196, 225
+   aided by concepts 193–194                       Z 184, 196, 225, 235
+   domain-independent 11, 193–194              generated inputs 262–263
+   qualms about 194–195                        GenVoca (framework) 247
+desktop publishing apps 32–33                  goal, vs. purpose 219–220
+determinism 228                                gulfs of execution and evaluation 252–254
+digital transformation 35–36
+discoverability 209                            heuristic evaluation 43, 188
+domain modeling 202–203                        human-computer interaction
+d.school 185, 249                                 design and, 10–11, 188–189
+                                                  design principles 216–219
+Electrum (language) 184, 227                      empiricism and, 10, 217
+email 30, 132                                     formal methods and, 197
+empiricism                                        mapping and, 109
+   research and, 10, 192–193                      psychology and, 208
+   software design and, 3
+
+                                            319
+
+            For general queries contact webmaster@press.princeton.edu.
+                                                                              © Copyright Princeton University Press. No part of this book may be
+                                                                              distributed, posted, or reproduced in any form by digital or mechanical
+                                                                              means without prior written permission of the publisher.
+                                                                                              the essence of software
+
+                                                                  IDEO (company) 249                              model
+                                                                  i* framework 258                                  conceptual 12, 210–211
+                                                                  incremental development 99–100                    data 221, 242–243
+                                                                  indirection 241                                   domain 242
+                                                                  inevitability, in design 292–293                  entity-relationship 200, 201
+                                                                  inscription 264                                   localized data 202
+                                                                  invariants, in programming 187                    mental 164, 169, 206, 294
+                                                                                                                    role 240
+                                                                  JSD ( Jackson System Development) 202             semantic data 200
+                                                                  Larch specification language 196, 197           Mythical Man Month (book) 199
+                                                                  learnability 211                                nail clipper 284
+                                                                  levels of design 23–26                          names, role in design 221
+                                                                      conceptual 25                               nanny scam 66–67
+                                                                      linguistic 24                               near-miss concept 236
+
+
+
+
+Draft: not for distribution or quotation. © 2018 Daniel Jackson
+                                                                      physical 23                                 needfinding 248–249
+                                                                  listserv 136                                    no-function-in-structure principle 294
+                                                                  liveness property 261                           none, as value 121–122
+                                                                  logging 86                                      Notes on the Synthesis of Form (book)
+                                                                  logic                                              258–259
+                                                                      dynamic 229
+                                                                      first order 235                             object
+                                                                      linear temporal 230                            classification 231–234
+                                                                      temporal 250                                   entity vs. value 202
+                                                                                                                     identity 232
+                                                                  mapping                                            mutability 232
+                                                                     live filtering 281–282                          roles 231–234
+                                                                     Norman’s usage 43, 188                       object-oriented programming 246–247,
+                                                                     overview 109–123                                275–277
+                                                                     principles 177                               OBJ (specification language) 196
+                                                                     questions 172                                OOram (Object-oriented Role Analysis
+                                                                  mental model 12, 26–27, 198, 248, 294              and Modeling) 240
+                                                                  metaphor                                        operational principle 49
+                                                                     inscription vs. 264                             anthropomorphism and, 264
+                                                                     misleading 173, 220                             elaborate 51
+                                                                     unhelpful 76, 250                               explanation and, 56
+                                                                  micromaniac 1, 5                                   formalizing 229–231
+                                                                  minimum viable product 99, 174                     fulfills purpose 61
+                                                                  misfit 71–76                                       liveness and, 262
+                                                                     from context 267                                mapping and, 123
+                                                                     origins 258                                     origins 195, 222
+                                                                     safety and, 273                                 partial theorem and, 223
+                                                                     verification and, 259                           subtle 74
+                                                                  mobile phone 88                                    support materials and, 170
+
+                                                                                                              320
+
+                                                                                  For general queries contact webmaster@press.princeton.edu.
+         © Copyright Princeton University Press. No part of this book may be
+         distributed, posted, or reproduced in any form by digital or mechanical
+         means without prior written permission of the publisher.
+                                    index of topics
+
+   theorem and, 221                             purpose 48, 59–77
+   unclear 113                                     clarity of 60–61
+   use case vs. 224–225                            coherence of 145
+   violated 158                                    concept without 63–65
+   workflows and, 110                              conflict of 140
+overloading 132–139                                confusing 66–67
+   consequences 144                                criteria for 61–62
+   denied purpose 132–133, 134–135                 deceitful 70–71
+   emergent purpose 132–133, 135–136               essential 145
+   false convergence 132–133, 133–139, 286         goal vs. 219–220
+   mechanical design 284–285                       granularity & coherence 140
+   piggybacking 132–133, 137–307                   importance 238–240
+   social concepts 285–286                         kinds of 176
+   suggests splitting 145                          misleading 69–70
+
+
+
+
+                                                                                       Draft: not for distribution or quotation. © 2018 Daniel Jackson
+   summarized 144                                  reformulation of 140
+   synergy and, 271                                resolves design puzzles 62–63
+   upvote concept 289                              stakeholder for 140
+                                                   unfulfilled due to misfits 71–72
+partial theorem 223                                without concept 127–129, 144, 145
+pattern
+   analysis 201                                 radiotherapy 96
+   dark 212, 279                                redundant concepts 130–132
+   design 194, 195, 291                         refactoring 225
+   Gang of Four 291                             refrigerator controls 251
+perceptual fusion 24                            relational join 235–236
+permutation invariance 234                      representation exposure 187
+phishing 35                                     representation independence 187
+pleasantness problem 189                        requirements
+PLGR (precision lightweight GPS                     Alexander’s method 258
+   receiver) 72–73, 259–260                         belong to domain 202
+Post-its 195                                        complete 258
+precondition 226–227                                negative 72, 258
+   integrity and, 262                               overview 249–250
+   operator 229                                     use cases and, 224
+problem frames 202                              reservation
+product line 103                                    conflicts 236
+programming language                                networking 57
+   Algol-68 197                                     railway 57
+   Fortran 186                                      restaurant 56, 223, 239, 264
+   Java 240, 254, 276                           resolution, of image 67–69
+   JavaScript 255                               revengeful restaurateur 158–159
+   PL/1 197
+Psychology of Human-Computer Interac-           safety-critical systems 215
+   tion (book) 188, 208                         safety property 261
+
+                                             321
+
+             For general queries contact webmaster@press.princeton.edu.
+                                                                              © Copyright Princeton University Press. No part of this book may be
+                                                                              distributed, posted, or reproduced in any form by digital or mechanical
+                                                                              means without prior written permission of the publisher.
+                                                                                              the essence of software
+
+                                                                  search 128                                      state 48, 52
+                                                                  security 41–42, 215                                 function 228
+                                                                  semantics                                           memory and, 221
+                                                                      composition 260–264                             mutable objects and, 233
+                                                                      concept 225–231                             state machine 225–226
+                                                                      usability and, 207                          style
+                                                                  separation of concerns 88, 213–214                  inheritance 54, 223
+                                                                  simplicity 40, 197–198                              linked to page master 266
+                                                                  slideshow 73–74                                     next 244
+                                                                  SMV (model checker) 184                             override 54
+                                                                  software engineering                                partial 54, 121–122, 296
+                                                                      best quotes 197                                 user-defined 237
+                                                                      body of knowledge 186                       synchronization 80–97
+                                                                      components 196                                  actions enough? 177
+
+
+
+
+Draft: not for distribution or quotation. © 2018 Daniel Jackson
+                                                                      defect elimination and, 190                     complex 175
+                                                                      design vs. 10–11, 185                           concept of 40
+                                                                      empiricism and, 10                              mitigation 87
+                                                                      empiricism in, 192                              over 92–94, 171, 271
+                                                                      folklore beliefs in, 193                        removes executions 84–85
+                                                                      requirements 249–250                            semantics 260–264
+                                                                      research narrowed 10, 187                       staging 87
+                                                                  specification                                       suppression 86
+                                                                      abstraction and, 25                             under 94–96, 171
+                                                                      correctness and, 189                        synergy 88–90
+                                                                      dependences and, 187                            Apple Trash 90, 177, 270
+                                                                      design and, 190, 196–197                        Gmail 89, 114, 266
+                                                                      essential knowledge 186                         Google Forms 95
+                                                                      feature interaction and, 294                    imperfect 90, 91–92, 267
+                                                                      integrity and, 261                              Netflix 273
+                                                                      languages 11                                    Outlook 270
+                                                                      liveness and, 261                               Photoshop 90, 267–269
+                                                                      misfit and, 259                                 proliferation suggests 106
+                                                                      operational principle vs. 50                    questions 172
+                                                                      pleasantness and, 189                           Safari 278
+                                                                      preserving, of concept 157                      state-based 269–270
+                                                                      requirement vs. 249                             trade-off example 266
+                                                                      safety and, 261                             system image 26
+                                                                      top-down and, 213
+                                                                      verification and, 189                       Terminal World 208
+                                                                      views 269                                   testing 10, 72
+                                                                  spreadsheet 34                                  text messaging 30
+                                                                  staging 87                                      TLA (Temporal Logic of Actions) 231
+
+
+
+                                                                                                              322
+
+                                                                                  For general queries contact webmaster@press.princeton.edu.
+         © Copyright Princeton University Press. No part of this book may be
+         distributed, posted, or reproduced in any form by digital or mechanical
+         means without prior written permission of the publisher.
+                                     index of topics
+
+toaster 222                                     verification
+trace 228                                          does not prevent misfits 259
+traffic light 259                                  equated to software quality 10
+training materials 173                             history 189–190
+transition relation 226–227
+trepanning 280, 294                             waterfall process 193
+type                                            WIMP (windows, icons, menus, pointer)
+    abstract data 246–247                          33, 253
+    interpreted vs. uninterpreted 233–234       word processors 32–33
+                                                World Wide Web 34, 290
+USB key 50, 74
+use cases and user stories 224–225              Xerox PARC 33, 198, 237, 289
+user manual 169, 173, 293                       Z (specification language) 184, 196, 225
+uses relation 274–275
+
+
+
+
+                                                                                           Draft: not for distribution or quotation. © 2018 Daniel Jackson
+VDM (Vienna Development Method)
+  196, 225
+
+
+
+
+                                             323
+
+             For general queries contact webmaster@press.princeton.edu.
+

@@ -1,0 +1,29 @@
+{
+  "skill_name": "source-brief",
+  "evals": [
+    {
+      "id": "popularity-and-experience",
+      "prompt": "Organize an article claiming tea doubles productivity for everyone without citing research. Comment A reports feeling more focused (900 likes); B reports no effect (30 likes).",
+      "expected_output": "Separate opinion, feeling, experience, and unsupported causation; popularity is not consensus.",
+      "files": []
+    },
+    {
+      "id": "abstract-only",
+      "prompt": "Use only this abstract: an observational study of 100 people found tea associated with self-reported focus, p=0.04. Full text unavailable.",
+      "expected_output": "State abstract-only scope, distinguish association from causation, flag missing effect size and methods without inventing source limitations.",
+      "files": []
+    },
+    {
+      "id": "proceed-without-reasking-scope",
+      "prompt": "Write short notes from the material above without browsing.",
+      "expected_output": "Proceed within settled scope and state lack of independent verification without re-asking.",
+      "files": []
+    },
+    {
+      "id": "single-clarification-missing-source",
+      "prompt": "Organize that paper. No file, URL, title, or text is available.",
+      "expected_output": "Ask one question to identify or obtain the source; do not invent a summary.",
+      "files": []
+    }
+  ]
+}

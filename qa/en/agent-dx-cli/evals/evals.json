@@ -1,0 +1,59 @@
+{
+  "skill_name": "agent-dx-cli",
+  "evals": [
+    {
+      "id": "gws-parity",
+      "prompt": "Design an API-backed CLI with 1:1 GWS core conventions. The team proposes --output json, schema Markdown by default, a separate ontology tree, and MCP shell forwarding. Give a minimal design and verification plan.",
+      "expected_output": "Uses pinned evidence, correct flag meanings and schema shape; preserves compact descriptions; distinguishes MCP requirement from pinned source; shares typed execution.",
+      "files": []
+    },
+    {
+      "id": "review-boundary",
+      "prompt": "Review only. A CLI has README promises but no executable tests. It prints success on HTTP 202, accepts a token flag, and retries timed-out creates with a new key. Score it.",
+      "expected_output": "No edits or production calls; evidence-limited score, critical blockers and targeted verification; no passing score or unsupported claims.",
+      "files": []
+    },
+    {
+      "id": "role-aware-hardening",
+      "prompt": "Refactor validation in an authorized isolated fixture. IDs can contain ?fields=x or %2e%2e. Body text may contain Chinese, newlines and URLs with query strings. A map has user-defined keys.",
+      "expected_output": "Validates by role, does not apply identifier bans to free text or map keys, protects sensitive diagnostics, tests positive and negative cases.",
+      "files": []
+    },
+    {
+      "id": "proceed-without-reasking",
+      "prompt": "Implement the approved local fixture changes: JSON inputs and a dry-run with zero business requests. Preserve Java and current PAT/keyring storage. No production writes.",
+      "expected_output": "Proceeds without renewed permission, retains stack and auth, measures real HTTP/credential/journal side effects and does not claim full rewrite from this subset.",
+      "files": []
+    },
+    {
+      "id": "single-clarification-target",
+      "prompt": "Apply cleanup to the old tenant. There are two different tenants named old and deletion is irreversible.",
+      "expected_output": "Asks one target/effect question; continues safe discovery if possible; no guessed deletion or generic approval questionnaire.",
+      "files": []
+    },
+    {
+      "id": "non-api-scope",
+      "prompt": "Review a local image conversion CLI. It has no remote API, authentication, updater, or mutation of source files. Do we need Discovery, PAT, MCP and a rule engine to score well?",
+      "expected_output": "Explains justified N/A before scoring, reports applicable denominator, avoids unnecessary API infrastructure while retaining input, file, output and process checks.",
+      "files": []
+    },
+    {
+      "id": "headless-help-pipeline",
+      "prompt": "Review a CLI where deploy requires an arrow-key menu when --env is missing, resource help omits examples, failures say invalid input without a correction, and a successful create prints only Done. Keep any optional human mode.",
+      "expected_output": "Requires complete flag/JSON input and fast non-TTY failure; optional explicit TTY interaction; examples at each help level; actionable valid invocation; parseable IDs and pipeline test; checks repeated writes and dry-run without duplicating the principle list.",
+      "files": []
+    },
+    {
+      "id": "idempotency-preview-boundaries",
+      "prompt": "Design tests for an API-backed CLI. Server keys expire after 24 hours. Exercise repeated creates, changed bodies, keyed and unkeyed timeouts, valid/invalid/secret dry-run inputs, and an accepted asynchronous job. State the evidence required before calling these behaviors safe.",
+      "expected_output": "Uses declared keys and target/body identity; checks one durable effect, conflicts, expiry and current authorization; reconciles unknown outcomes; tests local preview side effects and all-format secret canaries; distinguishes accepted from terminal success without assuming universal flags.",
+      "files": []
+    },
+    {
+      "id": "schema-artifact-drift",
+      "prompt": "An old help page says --output json. The current CLI changed its schema, and the score report belongs to another binary. The developer wants to reuse the old report for release0.1.1. Give a concise review and validation plan.",
+      "expected_output": "Inspects the current help/schema, preserves declared flag semantics and native fields, retests changed boundaries, records exact artifact identity, and does not relabel prior evidence or infer GWS parity from a different version.",
+      "files": []
+    }
+  ]
+}

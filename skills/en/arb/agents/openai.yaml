@@ -1,0 +1,6 @@
+interface:
+  display_name: "Architecture Review Board"
+  short_description: "Review architecture proposals as an ARB"
+  default_prompt: "Use $arb to start an Architecture Review Board review of the named proposal."
+policy:
+  allow_implicit_invocation: false

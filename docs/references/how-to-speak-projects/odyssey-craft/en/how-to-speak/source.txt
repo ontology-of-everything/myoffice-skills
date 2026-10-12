@@ -1,0 +1,310 @@
+# How to Speak
+
+## Opening: Communication as a Core Skill
+
+Good morning.
+
+The Uniform Code of Military Justice specifies court-martial for any officer who sends a soldier into battle without a weapon. There ought to be a similar protection for students.
+
+Students should not go out into life without the ability to communicate.
+
+Your success in life will be determined largely by your ability to speak, your ability to write, and the quality of your ideas, in that order.
+
+I know that we can make progress on this, because the quality of communication depends on a simple formula: knowledge, practice, and talent. Of those three, talent is the smallest factor.
+
+What matters most is what you know, and how much you practice with what you know.
+
+That point became clear to me years ago while skiing at Sun Valley. I had heard it was celebrity weekend, and one of the celebrities was Mary Lou Retton, the Olympic gymnast. She was an extraordinary athlete, but she was new to skiing.
+
+When I saw her on the novice slope, I realized that I was a much better skier than she was. Not because I had more athletic talent, but because I had more skiing knowledge and more practice. She had talent; I had knowledge and practice.
+
+The same is true of speaking. You can become much better than people who may have more natural talent if you build the right knowledge and practice it deliberately.
+
+That is my objective today. My promise is this: by the end of this talk, you will have seen a set of techniques that you can add to your own speaking repertoire.
+
+Perhaps only one of them will matter in a crucial moment, but that one technique might be the one that helps you get the job, win support for an idea, or make your work understood.
+
+This is a nonlinear process. You never know which idea will be decisive. But by the end of this hour, you will have been exposed to enough practical tools that you can give your ideas the best chance to be valued and accepted.
+
+Before we begin, we need one rule of engagement: no laptops and no phones. Human beings have only one language processor. If that processor is busy reading email or browsing the web, it cannot also be listening.
+
+Worse, an open laptop distracts the people around you. And if I see one, I do a worse job as a speaker. So for everyone in the room, please put those devices away.
+
+Now, let us begin.
+
+## How to Start
+
+The first question is how to start a talk.
+
+Some people think the right way to begin is with a joke. I do not recommend it. At the beginning of a talk, people are still settling in. They are putting things away, adjusting to the room, and getting used to your voice.
+
+They are not ready for a joke, so jokes at the beginning usually fall flat.
+
+What you should do instead is begin with an empowerment promise. Tell the audience what they will know at the end that they do not know at the beginning. Give them a reason to be there.
+
+For example: "At the end of this hour, you will know things about speaking that you do not know now, and at least one of those things will make a difference in your life." That is an empowerment promise.
+
+It gives the audience a reason to listen.
+
+## Core Techniques
+
+Once a talk has begun, there are several techniques that are always on my mind.
+
+The first is cycling. Do not make a point once and assume everyone has it. Go around the subject, then go around it again, and then again.
+
+Some people describe this as: tell them what you are going to tell them, tell them, and then tell them what you told them. That may sound as though you are treating the audience as unintelligent, but the real reason is different.
+
+At any moment, some portion of the audience will be temporarily lost, distracted, or fogged out. If you want the probability to be high that everyone gets the point, you need to return to it more than once.
+
+The second technique is building a fence around your idea. When you explain an idea, make clear what it is and what it is not, so it is not confused with someone else's idea.
+
+If I were teaching someone what an arch is, I would show examples of arches and also examples of things that are not arches. I would build a fence around the concept.
+
+In a technical talk, the same principle applies.
+
+You might say, "My algorithm may look similar to Jones's algorithm, but his is exponential and mine is linear." That sentence separates your idea from a neighboring idea and prevents confusion.
+
+The third technique is verbal punctuation. Because listeners occasionally drift away and need to get back on the bus, you should provide landmarks. You can say, "First we discussed how to start. Then we discussed cycling.
+
+Now we are moving to verbal punctuation." Enumeration, transitions, and signposts create places where listeners can rejoin the talk.
+
+The fourth technique is asking questions. A well-chosen question brings people back into the room. But the question must be chosen carefully. If it is too obvious, people may feel embarrassed to answer.
+
+If it is too hard, no one will say anything. After asking, you must also be willing to wait. Seven seconds of silence feels like an eternity to a speaker, but it is a reasonable amount of time for an audience to think and respond.
+
+These are simple heuristics, but they matter. If you watch speakers you admire and ask why they are effective, you can build your own repertoire and develop your own style.
+
+That is the central objective: learn enough about speaking that you can create a style that works for you.
+
+## Time and Place
+
+The next topic is time and place.
+
+What is a good time for a lecture? Around 11:00 a.m. is excellent. Most people are awake by then, hardly anyone is going back to sleep, and it is not right after a meal.
+
+What about the place? The most important feature is light. The room should be well lit. When the lights go down, people naturally become sleepy.
+
+Whenever I give a talk, one of the first things I tell the audiovisual team is to keep the lights up. They may say people will see the slides better if the lights are off.
+
+My answer is that it is very hard to see slides through closed eyelids.
+
+You should also inspect the room in advance. Before giving a talk, I ask to see the room where I will be speaking. That way, if there is anything strange about the space, I can deal with it.
+
+Sometimes it requires intervention; sometimes it simply requires knowing what the challenges are.
+
+Finally, the room should be reasonably populated. If a large hall has only a handful of people in it, the emptiness becomes distracting.
+
+You do not need a packed room, but you do need the right size room, ideally one that is more than half full.
+
+## Boards, Props, and Slides
+
+Now let us talk about the tools of the trade: boards, props, and slides.
+
+For teaching and informing, I believe the board is the right tool. Slides are good when your purpose is to expose ideas quickly, as in a conference talk or job talk.
+
+But when your purpose is to teach, the board has several important advantages.
+
+First, the board has graphic quality. You can draw, revise, connect, and emphasize in real time. Second, the speed at which you write on a board is close to the speed at which people can absorb ideas.
+
+If you race through slides, the audience cannot follow at the same pace. Third, the board gives you a target. Novice speakers often become suddenly self-conscious about their hands.
+
+They put them in their pockets or behind their backs, which can look awkward or even rude in some cultures. A board gives your hands something useful to do.
+
+I once watched Seymour Papert give a lecture and thought it was terrific. I went a second time, first to absorb the content and then to study the style. I noticed that he was constantly pointing at the board.
+
+Later I realized that much of what he pointed to was not directly related to what he was saying. Even so, it worked. It gave his body a purpose and kept the audience oriented.
+
+Props are also powerful. Playwrights understand this better than anyone. In Henrik Ibsen's Hedda Gabler, a manuscript and a stove become central dramatic objects. As the fire grows, you know something is going to happen to that manuscript.
+
+The prop becomes memorable.
+
+Speakers can use props in the same way. Seymour Papert used a bicycle wheel to show how looking at a problem in the right way can make it clear.
+
+Mechanical engineers may analyze the spinning wheel with formal rules and still guess wrong about which way it will move.
+
+But if you put duct tape on one part of the wheel and think only about that moving piece, the problem becomes intuitive. The prop changes how the audience sees the problem.
+
+Another example comes from an introductory physics lecture. The instructor pulled a heavy pendulum to his nose, released it, and let it swing across the room and back. It returned gently to his nose, demonstrating conservation of energy.
+
+During the swing, the audience had several seconds to think, "This person really believes in conservation of energy." Do not try this casually; the temptation to push the pendulum instead of simply releasing it is real.
+
+Why do boards and props work so well? My view is that they trigger a kind of empathetic mirroring. When you watch someone write on a board, part of you feels the action of writing.
+
+When you watch a physical object move, you feel its movement more vividly than you would if it were only a picture on a slide. Physical action engages the audience in a way that static slides often do not.
+
+## Using Slides Well
+
+Slides have their place, especially in job talks and conference talks, where the goal is often to expose ideas rather than teach them deeply. But slides are often misused.
+
+I once met someone in an airport who was on his way to Europe to give a job talk. He asked whether I would critique his slides. I said, "Not at all. You have too many slides, and they have too many words." He asked how I knew.
+
+I answered, "Because it is always true."
+
+Slides should be condiments, not the main event. Do not read them to the audience. People can read. If you read aloud what is already on the screen, you annoy them and divide their attention.
+
+The first step in improving slides is to remove unnecessary background decoration. The second is to remove most of the words. Once the words are gone, you are no longer licensed merely to read the slide. You must speak.
+
+Remove logos when they are not needed. Remove titles when you can introduce the topic yourself. Reduce clutter wherever possible.
+
+This matters because, again, human beings have one language processor. If a slide is packed with text, the audience will read the slide instead of listening to you. A student of mine once tested this.
+
+He taught students web programming ideas, putting some information on slides and saying other information aloud. Then he reversed the arrangement for a control group. The students remembered best what they had read on the slides.
+
+One even reported that the speaker's talking was distracting.
+
+Font size is another discipline. Small fonts tempt you to put too many words on the slide. A readable slide often needs a font around 40 or 50 points.
+
+If you need 35-point type or smaller, you are probably trying to say too much on one slide.
+
+Avoid laser pointers. They pull your eyes and body away from the audience. When you turn to point at the screen, you lose contact with the room.
+
+If something on the slide must be identified, put an arrow on the slide itself and refer to it: "Look at the item at the end of arrow number one."
+
+When reviewing a presentation, print the slides and lay them out on a table. You will quickly see whether the talk is too heavy: too much text, not enough air, not enough imagery, and not enough white space.
+
+Heavy slides exhaust the audience.
+
+There is one special exception: the slide that is intentionally overwhelming. The term for this is like a hapax legomenon, something that appears only once.
+
+You may use exactly one slide whose point is that it is too complex to understand at a glance. For example, a slide showing the complexity of governing Afghanistan can make its point precisely by being impossible to absorb.
+
+But you get only one such slide per talk.
+
+These slide crimes do happen in real life: hands in pockets, bad rooms, dark spaces, laser pointers, speakers standing far from their slides, decks with too many slides, and conclusion sections that never seem to end.
+
+The result is predictable: the audience checks email, studies the lunch menu, or appears attentive only because the photograph is still.
+
+## Informing and Inspiring
+
+Let us now consider special cases. The first is informing, which is what I am doing now.
+
+When your goal is to inform, begin with a promise. Then ask how you will inspire. For a long time I had given this talk without thinking deeply about inspiration, until I was asked to emphasize it for new faculty.
+
+I began asking people when they had been inspired.
+
+Incoming students often said they were inspired by a high school teacher who told them they could do it. Senior faculty often said they were inspired by someone who helped them see a problem in a new way.
+
+Across the range, people were inspired by passion. They were moved when someone displayed genuine excitement about what they were doing.
+
+That means part of your job is to show why the material matters to you. If you are teaching artificial intelligence, for example, it is not hard to convey excitement.
+
+If you are not interested in artificial intelligence, you may not be interested in interesting things. But the general principle holds in any field: show what is cool, surprising, consequential, or beautiful about the work.
+
+An empowerment promise can help here too. Suppose I am teaching resource allocation. I might begin with the problem of coloring the states in the United States so that no neighboring states share a color.
+
+A naive program may take so long that the sun would explode before it finishes. Then, with a slight change in the method, the program finishes in seconds.
+
+If students know that in the next 50 minutes they will understand that transformation, they have a reason to care.
+
+There is also the question of teaching people how to think. Faculty often say that teaching people how to think is their highest purpose. But when asked how they teach thinking, they often have no answer.
+
+My answer is that we are storytelling animals. We begin learning stories in childhood and continue through law, business, medicine, engineering, and every other professional school.
+
+Thinking depends on the stories we know, the questions we ask about those stories, the mechanisms we use to analyze them, the ways we combine them, and the methods we use to judge their reliability.
+
+To teach people how to think, give them the stories and the tools for working with stories.
+
+## Persuading
+
+Many talks are not simply about informing. They are about persuading. Persuasion appears in oral exams, job talks, research presentations, and public arguments for your work.
+
+In oral exams, two failures are especially common: failure to situate and failure to practice.
+
+To situate your work means to put it in context. Explain the problem, why it matters, who else is working on it, what has or has not changed over time, and what impact a solution would have.
+
+Your work should not appear as an isolated object. It should appear as part of a larger intellectual landscape.
+
+Practice is equally important, but not all practice is useful. Practicing only with people who already know your work can be misleading. They will hallucinate missing material into your talk because they already understand the context.
+
+Your adviser may have the same problem. To test whether your talk works, practice with intelligent people who do not already know what you are doing. Ask them to be severe.
+
+If they cannot make you uncomfortable in practice, they are not helping enough.
+
+## Job Talks
+
+For job talks, the first five minutes are decisive.
+
+I once asked colleagues what they look for in a faculty candidate.
+
+One said immediately, "They have to show us they have vision." Another said, just as quickly, "They have to show us they have done something." When I asked how long a candidate has to establish those two things, the answer was five minutes.
+
+If you have not shown vision and accomplishment in the first five minutes, you may already have lost the room.
+
+Vision means identifying a problem that matters and showing something new in your approach. For example, the problem might be understanding the nature of human intelligence.
+
+The approach might be asking what makes human beings different from chimpanzees and Neanderthals. Is the difference merely quantitative, or do humans have something fundamentally different? My own answer is that we are symbolic creatures.
+
+We build symbolic descriptions of relations and events, string them together, and make stories. That ability is central to what makes us different.
+
+To show that you have done something, enumerate the steps required to make progress. You do not need to have completed every step, but you should show that you understand the path.
+
+For example: specify the behavior, enumerate the constraints, implement a system, and demonstrate it. Since we are engineers, we often feel we have not understood something until we can build it.
+
+At the end of the talk, return to those steps and enumerate your contributions. The beginning and ending should mirror each other.
+
+The talk becomes a sandwich: vision and plan at the beginning, technical substance in the middle, and contributions at the end.
+
+## Getting Recognized
+
+Once you have the job, you need to think about how your work will be recognized.
+
+Why should you care about recognition? Because your ideas are like your children. You do not want them to go out into the world in rags. You want to present them in a way that allows their value to be seen.
+
+There is a set of elements I like to call the Winston Star. Each point begins with S: symbol, slogan, surprise, salient idea, and story.
+
+First, you need a symbol: an image or object associated with the work. In my own early work on learning arches, the arch itself became the symbol.
+
+Second, you need a slogan: a phrase that gives people a handle on the work. In that case, the phrase was "one-shot learning," because the program learned something definite from each example.
+
+Third, you need a surprise. The surprise was that you do not necessarily need a million examples to learn something. If you use an example intelligently, one example can teach you something definite.
+
+Fourth, you need a salient idea. By salient, I do not mean merely important. I mean an idea that sticks out. Some theses contain too many good ideas, and as a result no one knows what the work is really about.
+
+In the arch-learning work, the salient idea was the "near miss": an example that is not an arch, but misses by only a small amount.
+
+Fifth, you need a story. Tell how the work was done, how it works, and why it matters. People remember stories, and stories give your technical contributions a structure they can carry away.
+
+This is not just about becoming famous. It is about giving your work a fair chance to be understood.
+
+## How to Stop
+
+The final topic is how to stop.
+
+First, consider the final slide. Do not end with a giant list of collaborators. You should acknowledge collaborators, but do that at the beginning, not at the end.
+
+A long collaborator slide at the end can unintentionally suggest that no one knows what you personally contributed.
+
+Do not end with a slide that says "Questions?" That slide may sit on the screen for 20 minutes and wastes valuable real estate. It tells the audience nothing about who you are or what you have done.
+
+Do not end with "Thank you" as a slide. It wastes the same opportunity.
+
+Do not even end with "Conclusions" if those conclusions are merely statements no one cares about. What people care about is what you have contributed.
+
+Your final slide should be labeled "Contributions." It should remain on the screen while people ask questions and while they leave. It is your final opportunity to show what you have done.
+
+Now consider the final words.
+
+You may end with a joke. By the end of a talk, people have adjusted to your voice and rhythm, so a joke can work. A gifted speaker once told me that he always ends with a joke because then people think they had fun the whole time.
+
+I do not recommend ending with "thank you." It is not a disaster, but it is weak. It can imply that the audience stayed only out of politeness and that you are thanking them for enduring the experience.
+
+Once applause has begun, you may mouth a thank you or acknowledge the audience, but the last substantive words should be stronger.
+
+Other forms of ending are available. Political speeches often end with a benediction: "God bless you, and God bless America." Concerts use conventions: the audience knows to applaud when the conductor shakes hands with the concertmaster.
+
+Religious services use their own formal signals. These conventions tell people that the event is complete.
+
+Another possibility is to salute the audience. You can say why you value the time, the place, and the people in the room. You can acknowledge the quality of their questions, their attention, or the importance of the work they are doing.
+
+A sincere salute gives the ending dignity.
+
+So let me end this way.
+
+I am glad you are here, because by being here you have demonstrated that you understand something important: how you present and package your ideas matters. Ideas do not succeed only because they are good.
+
+They succeed when they are spoken, written, framed, and delivered in ways that allow other people to see their value.
+
+Build your knowledge. Practice deliberately. Watch effective speakers and ask why they work. Develop your own repertoire. Then send your ideas into the world well equipped.
+
+I salute you for taking that seriously, and I hope you will come back again and bring your friends.
+

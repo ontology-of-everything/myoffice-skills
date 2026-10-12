@@ -1,17 +1,21 @@
 # myoffice-skills
 
-Office-focused Agent Skills for presentations and repository guidance. The repository ships two
-capabilities as four localized skills: English uses the base name and Simplified Chinese adds
-`-cn`.
+Office-focused Agent Skills for presentations, repository guidance, architecture review, and reading notes. The
+repository ships six capabilities as ten skills. Paired skills use the base name for English and
+`-cn` for Simplified Chinese; `presentation-making-cn` and `brand-ui-design-cn` are Chinese-only.
 
 中文说明见 [README-CN.md](README-CN.md).
 
 ## Skills
 
-| English                                        | 中文                                                 | What it does                                             |
-| ---------------------------------------------- | ---------------------------------------------------- | -------------------------------------------------------- |
-| [`html-slides`](docs/skills/en/html-slides.md) | [`html-slides-cn`](docs/skills/cn/html-slides-cn.md) | Builds single-file styled HTML decks with optional PPTX. |
-| [`claude-md`](docs/skills/en/claude-md.md)     | [`claude-md-cn`](docs/skills/cn/claude-md-cn.md)     | Creates or prunes CLAUDE.md from repository evidence.    |
+| English              | 中文                                                                 | What it does                                             |
+| -------------------- | -------------------------------------------------------------------- | -------------------------------------------------------- |
+| `claude-md`          | [`claude-md-cn`](docs/skills/cn/claude-md-cn.md)                     | Creates or prunes CLAUDE.md from repository evidence.    |
+| `source-brief` | [`source-brief-cn`](docs/skills/cn/source-brief-cn.md) | Organizes reading notes and distinguishes statements from evidence. |
+| `agent-dx-cli` | [`agent-dx-cli-cn`](docs/skills/cn/agent-dx-cli-cn.md) | Designs, reviews, and refactors CLIs with evidence scoring, safety examples, and GWS practice. |
+| `arb`                | [`arb-cn`](docs/skills/cn/arb-cn.md)                                 | Architecture Review Board reviews; criteria pending.     |
+| — | [`presentation-making-cn`](docs/skills/cn/presentation-making-cn.md) | Turns sources into memorable HTML or Markdown decks through alignment and review. |
+| — | [`brand-ui-design-cn`](docs/skills/cn/brand-ui-design-cn.md) | Applies six UI design principles to strengthen brand memory and interface experience. |
 
 Machine-readable metadata lives in [docs/catalog.yml](docs/catalog.yml). Localization rules live
 in [docs/localization.md](docs/localization.md).
@@ -35,11 +39,15 @@ npx skills add ontology-of-everything/myoffice-skills \
 
 ## Usage
 
-Both capabilities are explicit-only:
+Reading notes and brand UI design support automatic selection and explicit invocation; other skills require explicit invocation:
 
 ```text
-$html-slides Build a 15-minute product presentation
+$agent-dx-cli Review this CLI and implement the authorized improvements
+$source-brief Organize this paper and distinguish claims, opinions, experience, and unverified information
 $claude-md Create concise CLAUDE.md guidance from this repository
+$arb Review this architecture proposal as the Architecture Review Board
+$presentation-making-cn Turn these materials into a memorable presentation
+$brand-ui-design-cn Improve this product interface using the six design principles
 ```
 
 ## Contributing
@@ -54,5 +62,4 @@ $claude-md Create concise CLAUDE.md guidance from this repository
 
 ## License
 
-[Apache-2.0](LICENSE) © myoffice-skills contributors. Huawei assets bundled with `html-slides`
-remain subject to their trademark notice and are intended only for Huawei-style presentations.
+[Apache-2.0](LICENSE) © myoffice-skills contributors.

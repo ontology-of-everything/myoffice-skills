@@ -9,7 +9,7 @@ skills/cn/<name>-cn/    # 简体中文
 
 ## Invariants
 
-1. Each skill has exactly one pair. The folder and `SKILL.md.name` match.
+1. Skills normally have one pair. Explicitly requested single-language skills use `standalone: true` in the catalog and omit `translation_of`; `presentation-making-cn` is Chinese-only. The folder and `SKILL.md.name` match.
 2. English metadata uses `language: en` and `translation_of: <name>-cn`; Chinese uses
    `language: zh-CN` and `translation_of: <name>`.
 3. Locale directories organize source discovery only. Each install payload is self-contained and
@@ -18,8 +18,9 @@ skills/cn/<name>-cn/    # 简体中文
    same meaning in both locales. Translate prose, not behavior.
 5. Executable assets are byte-identical unless a locale-specific implementation is explicitly
    documented and tested.
-6. English `SKILL.md`, UI metadata, and skill page use English; Chinese equivalents use Chinese.
-   Preserve vendor-native labels only when users must match them exactly.
+6. English `SKILL.md` and UI metadata use English; Chinese `SKILL.md`, UI metadata, and the
+   human-facing skill page (`docs/skills/cn/<name>-cn.md`) use Chinese. There is no English skill
+   page. Preserve vendor-native labels only when users must match them exactly.
 7. Update both locales, QA, catalog, README, and marketplaces in one change. CI must pass
    `tools/validate-localization.py` and `tools/validate-all.sh` before publish.
 

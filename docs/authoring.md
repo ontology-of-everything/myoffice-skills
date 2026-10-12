@@ -9,7 +9,7 @@ Conventions for skills in this monorepo. Spec baseline: [agentskills.io](https:/
 | `skills/en/<name>/` | English install payload (`SKILL.md` plus optional resources) |
 | `skills/cn/<name>-cn/` | Simplified-Chinese install payload |
 | `qa/<locale>/<name>/` | Validation, evals, assertions; never installed |
-| `docs/skills/<locale>/<name>.md` | Human-facing skill overview |
+| `docs/skills/cn/<name>-cn.md` | Human-facing skill overview (Chinese only) |
 
 Every capability ships as an English/default and `-cn` pair. Follow [localization.md](localization.md).
 
