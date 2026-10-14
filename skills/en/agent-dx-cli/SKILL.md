@@ -4,7 +4,7 @@ description: Designs, reviews, and refactors CLIs for AI agents. Use when buildi
 metadata:
   language: en
   translation_of: agent-dx-cli-cn
-  version: "0.1.2"
+  version: "0.3.0"
 ---
 
 # Agent DX CLI
@@ -35,7 +35,7 @@ Working rule: Proceed when facts and authorization suffice. Resolve ambiguity wh
 | Defense in depth | 7. Recovery | Repeated execution of one intent produces only one business effect. | Query unknown outcomes. Replay automatically only when evidence supports safe replay. |
 | Context efficiency | 8. Discovery | Provide executable examples in help at every command level. | Query methods and types as needed. Limit reference expansion. |
 | Context efficiency | 9. Responses | Support declared field selection. State whether the client or server removes unselected fields. | Limit pages and output. Preserve cursors and state whether enumeration is complete. |
-| Context efficiency | 10. Knowledge | Use description to explain the object, preconditions, direct effect, and completion boundary. | Keep workflows and constraints in skills. Keep parameter definitions in help/schema. |
+| Context efficiency | 10. Knowledge | Use description to explain the object, preconditions, direct effect, and completion boundary. | Keep workflows, constraints, and necessary examples in skills. Keep complete parameter definitions in current help/schema. |
 
 Use the non-interactive path by default. Optional interaction requires explicit selection and a TTY.
 If the outcome is unknown, return `unknown`.
@@ -70,6 +70,13 @@ A preview does not prove current authorization or execution success.
 
 For API-backed CLI design or validation that requires GWS alignment, read [GWS practice](references/gws.md).
 Run the relevant checks, retain the reference version, and record project differences.
+
+## Optional companion skills
+
+When the task includes companion skill authoring or review, read [SKILL+CLI authoring](references/skill-cli.md).
+A companion skill must earn its context cost: wrong patterns, outdated syntax, and misleading instructions can make an agent perform worse than with no skill.
+Keep only verified guidance that improves task decisions; evaluate companion skills against the same tasks without them.
+Other tasks use the CLI workflow above.
 
 ## Scoring
 

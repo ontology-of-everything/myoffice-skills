@@ -12,7 +12,7 @@ repository ships six capabilities as ten skills. Paired skills use the base name
 | -------------------- | -------------------------------------------------------------------- | -------------------------------------------------------- |
 | `claude-md`          | [`claude-md-cn`](docs/skills/cn/claude-md-cn.md)                     | Creates or prunes CLAUDE.md from repository evidence.    |
 | `source-brief` | [`source-brief-cn`](docs/skills/cn/source-brief-cn.md) | Organizes reading notes and distinguishes statements from evidence. |
-| `agent-dx-cli` | [`agent-dx-cli-cn`](docs/skills/cn/agent-dx-cli-cn.md) | Designs, reviews, and refactors CLIs with evidence scoring, safety examples, and GWS practice. |
+| `agent-dx-cli` | [`agent-dx-cli-cn`](docs/skills/cn/agent-dx-cli-cn.md) | Designs, reviews, and refactors CLIs with evidence scoring and GWS practice. Supports companion skill authoring when requested. |
 | `arb`                | [`arb-cn`](docs/skills/cn/arb-cn.md)                                 | Architecture Review Board reviews; criteria pending.     |
 | — | [`presentation-making-cn`](docs/skills/cn/presentation-making-cn.md) | Turns sources into memorable HTML or Markdown decks through alignment and review. |
 | — | [`brand-ui-design-cn`](docs/skills/cn/brand-ui-design-cn.md) | Applies six UI design principles to strengthen brand memory and interface experience. |

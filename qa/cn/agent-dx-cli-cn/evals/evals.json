@@ -54,6 +54,30 @@
       "prompt": "An old help page says --output json. The current CLI changed its schema, and the score report belongs to another binary. The developer wants to reuse the old report for release0.1.1. Give a concise review and validation plan.",
       "expected_output": "Inspects the current help/schema, preserves declared flag semantics and native fields, retests changed boundaries, records exact artifact identity, and does not relabel prior evidence or infer GWS parity from a different version.",
       "files": []
+    },
+    {
+      "id": "companion-skill-authoring",
+      "prompt": "基于提供的 CLI 产物，编写内容编辑与交付技能。使用一个技能和多个参考文档。检查当前 help/schema，保留必要用法和完成条件。只在指定隔离目录工作。",
+      "expected_output": "按需加载编写规范，保留服务与辅助命令语义，使用实际支持的命令，按任务加载参考，保留授权和预演边界，验证链接与示例并报告限制。",
+      "files": []
+    },
+    {
+      "id": "ordinary-review-no-authoring",
+      "prompt": "只审查：本地图像转换 CLI 支持输入输出路径和 JSON 输出。dry-run 只有文档，尚未验证。说明下一步检查。",
+      "expected_output": "按 CLI 主流程审查，不擅自创建配套技能或 API 基建，不在缺乏证据时声明预演安全。",
+      "files": []
+    },
+    {
+      "id": "gws-skill-classification",
+      "prompt": "说明 GWS 的 shared、service、helper、recipe、persona 技能类型。每个技能都需要复制全部五类吗？我们的 helper 没有 dry-run。给出精炼改编。",
+      "expected_output": "依据固定实例区分类型，不要求固定分层，保留资源方法语义和 helper 用法选项，选择最小组织，不虚构 dry-run 或通用 OpenClaw 元数据。",
+      "files": []
+    },
+    {
+      "id": "harmful-companion-skill",
+      "prompt": "审查一份配套技能：复制完整 CLI 手册，要求过时的 --output 参数，超时写入使用新 key 重试，已有授权仍强制重复审批。简单任务仅靠当前 help 即可完成。提出最小修正及有／无技能对照方案，不执行业务写入。",
+      "expected_output": "核对当前契约，移除过时语法与无证据的重试要求，保留授权和范围，只留下有用决策指导或省略技能。对照有效调用、完成判断、错误和上下文成本，包含失败及不应触发场景；不声称未执行的评估已通过。",
+      "files": []
     }
   ]
 }

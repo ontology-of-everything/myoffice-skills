@@ -54,6 +54,30 @@
       "prompt": "An old help page says --output json. The current CLI changed its schema, and the score report belongs to another binary. The developer wants to reuse the old report for release0.1.1. Give a concise review and validation plan.",
       "expected_output": "Inspects the current help/schema, preserves declared flag semantics and native fields, retests changed boundaries, records exact artifact identity, and does not relabel prior evidence or infer GWS parity from a different version.",
       "files": []
+    },
+    {
+      "id": "companion-skill-authoring",
+      "prompt": "Use this CLI artifact to create a companion skill for content editing and delivery. Use one skill with references. Check current help and schema. Include necessary usage examples and completion conditions. Work only in the supplied isolated directory.",
+      "expected_output": "Loads optional guidance, retains service/helper semantics, uses actual supported commands, routes references by task, preserves authorization and preview boundaries, checks links and executable examples, reports limits.",
+      "files": []
+    },
+    {
+      "id": "ordinary-review-no-authoring",
+      "prompt": "Review only: a local image conversion CLI supports input/output paths and JSON output. Its dry-run is documented but untested. Explain the next checks.",
+      "expected_output": "Uses CLI review without unsolicited companion skill creation or new API infrastructure. Does not claim dry-run safety without evidence.",
+      "files": []
+    },
+    {
+      "id": "gws-skill-classification",
+      "prompt": "Explain the GWS shared, service, helper, recipe, and persona skill types. Should our CLI copy all five into every skill? Our helper has no dry-run. Give a concise adaptation.",
+      "expected_output": "Uses pinned concrete types without mandatory layering, retains resource/method semantics and helper usage/options, chooses minimal packaging, does not invent dry-run or universal OpenClaw metadata.",
+      "files": []
+    },
+    {
+      "id": "harmful-companion-skill",
+      "prompt": "Review a companion skill that copies the full CLI manual, requires an obsolete --output flag, retries timed-out writes with new keys, and adds mandatory approvals despite existing authorization. Current help is sufficient for simple tasks. Propose a minimal correction and a with/without-skill evaluation; do not execute business writes.",
+      "expected_output": "Rechecks current contracts; removes stale syntax and unsupported retry claims; preserves authorization and scope; keeps only useful decision guidance or omits the skill; compares valid calls, completion, errors, and context cost including failure and out-of-scope cases. Does not claim unexecuted evaluations passed.",
+      "files": []
     }
   ]
 }

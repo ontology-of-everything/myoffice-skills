@@ -10,7 +10,7 @@ English: [README.md](README.md)。
 | -------------------- | -------------------------------------------------------------------- | ------------------------------------- |
 | `claude-md`          | [`claude-md-cn`](docs/skills/cn/claude-md-cn.md)                     | 根据仓库事实生成或精简 CLAUDE.md      |
 | `source-brief` | [`source-brief-cn`](docs/skills/cn/source-brief-cn.md) | 整理文章与论文，区分陈述性质和证据状态 |
-| `agent-dx-cli` | [`agent-dx-cli-cn`](docs/skills/cn/agent-dx-cli-cn.md) | 以十维检查、安全正反例、GWS 实践和证据评分指导 CLI 开发、审查与重构 |
+| `agent-dx-cli` | [`agent-dx-cli-cn`](docs/skills/cn/agent-dx-cli-cn.md) | 以十维检查、GWS 实践和证据评分指导 CLI 工程，按需编写配套技能 |
 | `arb`                | [`arb-cn`](docs/skills/cn/arb-cn.md)                                 | 架构评审委员会评审；准则待定          |
 | — | [`presentation-making-cn`](docs/skills/cn/presentation-making-cn.md) | 从材料理解到可记忆的 HTML／Markdown 文稿，含对齐与检视重构 |
 | — | [`brand-ui-design-cn`](docs/skills/cn/brand-ui-design-cn.md) | 运用六条界面设计原则，强化品牌记忆与界面体验 |

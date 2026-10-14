@@ -8,3 +8,8 @@ The two checks in each dimension are independent criteria. They are not an A/B e
 
 Version 0.1.2 merges safety checks into the main skill's examples. Use them to verify idempotency, conflicts, replay windows, previews, secrets, and completion.
 For API/GWS alignment, use the commands and checks in references/gws.md to verify project differences.
+
+Version 0.2.0 adds references/skill-cli.md for requested companion skill work.
+Test generated command examples and business boundaries. Also test ordinary review without skill authoring.
+
+For 0.3.0, evaluate `harmful-companion-skill` against a no-skill baseline; record actual outcomes and context cost. An added scenario is not evidence of a passed behavioral test.

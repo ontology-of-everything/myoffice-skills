@@ -138,9 +138,9 @@ skills:
   display_name_zh: 面向智能体的 CLI 工程
   domain: engineering
   subdomains: [cli, agent-dx, api, review, refactoring]
-  summary: Explicit-invocation CLI engineering with evidence scoring, safety examples, and GWS practice.
-  summary_zh: 仅显式调用，以十维检查、安全正反例和 GWS 实践指导 CLI 开发、审查与重构。
-  version: 0.1.2
+  summary: Explicit-invocation CLI engineering with evidence scoring, GWS practice, and optional companion skill authoring.
+  summary_zh: 仅显式调用，以十维检查和 GWS 实践指导 CLI 工程，按需编写配套技能。
+  version: 0.3.0
   agents: [codex]
   compatibility: Repository access and project-specific build tools; real service validation needs an isolated authorized environment.
   marketplaces: [clawhub]
@@ -156,9 +156,9 @@ skills:
   display_name_zh: 面向智能体的 CLI 工程
   domain: engineering
   subdomains: [cli, agent-dx, api, review, refactoring]
-  summary: Explicit-invocation CLI engineering with evidence scoring, safety examples, and GWS practice.
-  summary_zh: 仅显式调用，以十维检查、安全正反例和 GWS 实践指导 CLI 开发、审查与重构。
-  version: 0.1.2
+  summary: Explicit-invocation CLI engineering with evidence scoring, GWS practice, and optional companion skill authoring.
+  summary_zh: 仅显式调用，以十维检查和 GWS 实践指导 CLI 工程，按需编写配套技能。
+  version: 0.3.0
   agents: [codex]
   compatibility: Repository access and project-specific build tools; real service validation needs an isolated authorized environment.
   distribution: direct-skill

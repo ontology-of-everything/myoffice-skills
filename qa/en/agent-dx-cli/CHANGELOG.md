@@ -1,5 +1,17 @@
 # agent-dx-cli changelog
 
+## 0.3.0 — 2026-10-14
+
+- Define evidence-grounded companion skills, authoritative CLI contracts, and scoped guidance.
+- Remove stale or noisy instructions and compare skill-assisted behavior against a no-skill baseline.
+
+## 0.2.0 — 2026-10-12
+
+- Add optional SKILL+CLI authoring guidance in a separate reference.
+- Preserve GWS shared, service, helper, recipe, and persona semantics with pinned examples.
+- Distinguish GWS packaging from the Space adaptation. Add authoring and scope checks.
+- Preserve the CLI workflow, scoring thresholds, and explicit invocation.
+
 ## 0.1.2 — 2026-10-12
 
 - Replace the GWS reference with commands and verification steps. Move the pinned source to the footer.
