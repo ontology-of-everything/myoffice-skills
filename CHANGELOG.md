@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0 - 2026-10-14
+
+### Features
+
+- Add bilingual SKILL+CLI authoring guidance with pinned GWS examples and task-specific reference loading.
+- Define companion skills as evidence-grounded decision aids; keep executable guarantees in the CLI.
+- Add guidance to remove stale syntax, misleading rules, and context noise, plus a no-skill comparison scenario.
+
+### Validation
+
+- Add a harmful-companion-skill evaluation scenario; behavioral comparison results are not claimed.
+
 ## 0.2.0 - 2026-10-12
 
 ### Migration
