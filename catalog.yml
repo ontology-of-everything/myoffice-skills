@@ -1,0 +1,188 @@
+# Public skill index and per-skill versions. Keep in sync with skills/.
+version: 1
+skills:
+- id: brand-ui-design-cn
+  path: skills/zh-CN/brand-ui-design-cn
+  display_name: 品牌记忆与界面设计
+  display_name_zh: 品牌记忆与界面设计
+  domain: design
+  subdomains: [ui, brand, cards, visual-hierarchy]
+  summary: Chinese-only UI design principles for brand memory and interface experience.
+  summary_zh: 通过插画与 IP、卡片、信息层级和标签用色六条原则，强化品牌记忆与界面体验。
+  version: 0.1.0
+  agents: [cursor, claude-code, codex, openclaw]
+  distribution: direct-skill
+  language: zh-CN
+  standalone: true
+- id: presentation-making-cn
+  path: skills/zh-CN/presentation-making-cn
+  display_name: 演示文稿制作（中文）
+  display_name_zh: 演示文稿制作
+  domain: content
+  subdomains: [presentation, narrative, html-deck, markdown]
+  summary: Chinese-only, explicit-invocation presentation workflow.
+  summary_zh: 从材料理解、对齐与塑形到可记忆的 HTML 或 Markdown 文稿及检视重构。
+  version: 0.1.0
+  agents: [cursor, claude-code, codex, openclaw]
+  compatibility: File read/write access; browser access for HTML visual and interaction verification.
+  distribution: direct-skill
+  language: zh-CN
+  standalone: true
+- id: claude-md
+  path: skills/en/claude-md
+  display_name: CLAUDE.md
+  display_name_zh: CLAUDE.md 生成与精简
+  domain: meta
+  subdomains: &claude_md_subdomains
+  - agent-instructions
+  - repository-guidance
+  summary: "Create or prune CLAUDE.md from verified repository commands, architecture boundaries, and project-specific conventions. Use when preparing Claude Code repository guidance or reducing redundant instructions; retain rules that prevent concrete agent mistakes."
+  summary_zh: "依据核实过的仓库命令、架构边界与项目约定创建或精简 CLAUDE.md。适合准备 Claude Code 仓库指导或压缩冗余说明，只保留能避免具体错误的规则。"
+  version: 0.1.0
+  agents: &claude_md_agents
+  - cursor
+  - claude-code
+  - codex
+  - openclaw
+  compatibility: Requires repository file read/write access.
+  distribution: direct-skill
+  language: en
+  translation_of: claude-md-cn
+  clawhub:
+    categories: ["agents", "development"]
+    topics: ["agent-instructions", "claude-code", "claude-md", "repository-guidance", "context-efficiency"]
+- id: claude-md-cn
+  path: skills/zh-CN/claude-md-cn
+  display_name: CLAUDE.md 生成与精简（中文）
+  display_name_zh: CLAUDE.md 生成与精简
+  domain: meta
+  subdomains: *claude_md_subdomains
+  summary: "依据核实过的仓库命令、架构边界与项目约定创建或精简 CLAUDE.md。适合准备 Claude Code 仓库指导或压缩冗余说明，只保留能避免具体错误的规则。"
+  summary_zh: "依据核实过的仓库命令、架构边界与项目约定创建或精简 CLAUDE.md。适合准备 Claude Code 仓库指导或压缩冗余说明，只保留能避免具体错误的规则。"
+  version: 0.1.0
+  agents: *claude_md_agents
+  compatibility: Requires repository file read/write access.
+  distribution: direct-skill
+  language: zh-CN
+  translation_of: claude-md
+- id: arb
+  path: skills/en/arb
+  display_name: Architecture Review Board
+  display_name_zh: 架构评审委员会
+  domain: architecture
+  subdomains: &arb_subdomains
+  - architecture-review
+  - adr
+  - design-review
+  summary: Explicit-invocation-only Architecture Review Board skeleton; criteria and verdict template pending.
+  summary_zh: 仅显式调用的架构评审委员会技能骨架；评审准则与结论模板待定。
+  version: 0.1.0
+  agents: &arb_agents
+  - cursor
+  - claude-code
+  - codex
+  - openclaw
+  compatibility: Requires repository file read/write access.
+  distribution: direct-skill
+  language: en
+  translation_of: arb-cn
+- id: arb-cn
+  path: skills/zh-CN/arb-cn
+  display_name: 架构评审委员会（ARB）
+  display_name_zh: 架构评审委员会
+  domain: architecture
+  subdomains: *arb_subdomains
+  summary: Chinese edition. 仅显式调用的架构评审委员会技能骨架；评审准则与结论模板待定。
+  summary_zh: 仅显式调用的架构评审委员会技能骨架；评审准则与结论模板待定。
+  version: 0.1.0
+  agents: *arb_agents
+  compatibility: Requires repository file read/write access.
+  distribution: direct-skill
+  language: zh-CN
+  translation_of: arb
+- id: source-brief-cn
+  path: skills/zh-CN/source-brief-cn
+  display_name: 整理＋区分
+  display_name_zh: 整理＋区分
+  domain: content
+  subdomains: [reading, papers, evidence]
+  summary: Concise reading notes distinguishing statement types and evidence status.
+  summary_zh: 整理阅读与论文要点，区分陈述性质、证据状态、高赞、共识与争议。
+  version: 0.1.0
+  agents: [cursor, claude-code, codex, openclaw]
+  distribution: direct-skill
+  language: zh-CN
+  translation_of: source-brief
+- id: source-brief
+  path: skills/en/source-brief
+  display_name: Organize + Distinguish
+  display_name_zh: 整理＋区分
+  domain: content
+  subdomains: [reading, papers, evidence]
+  summary: Concise reading notes distinguishing statement types and evidence status.
+  summary_zh: 整理阅读与论文要点，区分陈述性质、证据状态、高赞、共识与争议。
+  version: 0.1.0
+  agents: [cursor, claude-code, codex, openclaw]
+  distribution: direct-skill
+  language: en
+  translation_of: source-brief-cn
+- id: agent-dx-cli
+  path: skills/en/agent-dx-cli
+  display_name: Agent DX CLI
+  display_name_zh: 面向智能体的 CLI 工程
+  domain: engineering
+  subdomains: [cli, agent-dx, api, review, refactoring]
+  summary: "Design, review, and refactor CLIs for AI agents using evidence-based checks of command contracts, predictable output, validation, permissions, and context efficiency. Use when building an agent-facing CLI or improving an existing one."
+  summary_zh: "面向 AI 智能体设计、审查与重构 CLI，依据证据核验命令契约、可预测输出、输入校验、权限与上下文效率。适合新建或改进智能体使用的命令行工具。"
+  version: 0.4.2
+  agents: [codex]
+  compatibility: Repository access and project-specific build tools; real service validation needs an isolated authorized environment.
+  marketplaces: [clawhub]
+  clawhub_url: https://clawhub.ai/agenticweb4/agent-dx-cli
+  clawhub_license: MIT-0 on ClawHub; repository source remains Apache-2.0
+  distribution: direct-skill
+  language: en
+  translation_of: agent-dx-cli-cn
+  clawhub:
+    categories: ["development", "agents"]
+    topics: ["cli-engineering", "agent-dx", "cli-contracts", "code-review", "refactoring"]
+- id: agent-dx-cli-cn
+  path: skills/zh-CN/agent-dx-cli-cn
+  display_name: 面向智能体的 CLI 工程
+  display_name_zh: 面向智能体的 CLI 工程
+  domain: engineering
+  subdomains: [cli, agent-dx, api, review, refactoring]
+  summary: "面向 AI 智能体设计、审查与重构 CLI，依据证据核验命令契约、可预测输出、输入校验、权限与上下文效率。适合新建或改进智能体使用的命令行工具。"
+  summary_zh: "面向 AI 智能体设计、审查与重构 CLI，依据证据核验命令契约、可预测输出、输入校验、权限与上下文效率。适合新建或改进智能体使用的命令行工具。"
+  version: 0.4.2
+  agents: [codex]
+  compatibility: Repository access and project-specific build tools; real service validation needs an isolated authorized environment.
+  distribution: direct-skill
+  language: zh-CN
+  translation_of: agent-dx-cli
+- id: word-aha
+  path: skills/en/word-aha
+  display_name: Word Aha English Vocabulary
+  display_name_zh: 单词啊哈：英文单词学习
+  domain: learning
+  subdomains: [english-vocabulary, context, interactive-cards, review]
+  summary: "Learn English words by starting with sentences: search for 1–5 familiar examples, infer meaning from context, then check it in new sentences; use for specific words, topics, or review, excluding simple lookups and translation."
+  summary_zh: "以句子为起点学习英文单词：搜索 1～5 句熟悉例句，对照猜义、换句验证；指定词汇、主题学词或复盘时使用，单纯查词或翻译不触发。"
+  version: 0.1.5
+  agents: [cursor, claude-code, codex, openclaw]
+  distribution: direct-skill
+  language: en
+  translation_of: word-aha-cn
+- id: word-aha-cn
+  path: skills/zh-CN/word-aha-cn
+  display_name: 单词啊哈：英文单词学习
+  display_name_zh: 单词啊哈：英文单词学习
+  domain: learning
+  subdomains: [english-vocabulary, context, interactive-cards, review]
+  summary: "以句子为起点学习英文单词：搜索 1～5 句熟悉例句，对照猜义、换句验证；指定词汇、主题学词或复盘时使用，单纯查词或翻译不触发。"
+  summary_zh: "以句子为起点学习英文单词：搜索 1～5 句熟悉例句，对照猜义、换句验证；指定词汇、主题学词或复盘时使用，单纯查词或翻译不触发。"
+  version: 0.1.5
+  agents: [cursor, claude-code, codex, openclaw]
+  distribution: direct-skill
+  language: zh-CN
+  translation_of: word-aha

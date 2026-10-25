@@ -1,0 +1,6 @@
+interface:
+  display_name: "架构评审委员会"
+  short_description: "以架构评审委员会方式评审架构方案、ADR 与设计变更"
+  default_prompt: "使用 $arb-cn，对指定架构方案做 Architecture Review Board 评审。"
+policy:
+  allow_implicit_invocation: false

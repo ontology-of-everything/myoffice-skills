@@ -1,0 +1,60 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Interface design",
+      "description": "UI design principles for brand memory and interface experience.",
+      "skills": [
+        "brand-ui-design-cn"
+      ]
+    },
+    {
+      "title": "Presentations",
+      "description": "Evidence-grounded presentation workflows and styled HTML decks.",
+      "skills": [
+        "presentation-making-cn"
+      ]
+    },
+    {
+      "title": "Repository guidance",
+      "description": "Evidence-based creation and pruning of CLAUDE.md instructions.",
+      "skills": [
+        "claude-md",
+        "claude-md-cn"
+      ]
+    },
+    {
+      "title": "Architecture review",
+      "description": "Architecture Review Board reviews of proposals, ADRs, and design changes.",
+      "skills": [
+        "arb",
+        "arb-cn"
+      ]
+    },
+    {
+      "title": "Reading and evidence",
+      "description": "Organize reading notes and distinguish claims from evidence.",
+      "skills": [
+        "source-brief",
+        "source-brief-cn"
+      ]
+    },
+    {
+      "title": "English vocabulary learning",
+      "description": "Start with familiar sentences to infer English word meanings, connect usage, and check transfer.",
+      "skills": [
+        "word-aha",
+        "word-aha-cn"
+      ]
+    },
+    {
+      "title": "Agent CLI engineering",
+      "description": "Predictable, defensible CLI design, review, and refactoring.",
+      "skills": [
+        "agent-dx-cli",
+        "agent-dx-cli-cn"
+      ]
+    }
+  ]
+}
